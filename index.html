@@ -2466,3 +2466,439 @@ function generateCaption() {
 }
 
    </script>
+
+   <!-- ===============================
+     AI TOOLS DIRECTORY
+================================ -->
+
+<section id="ai" class="ai-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-badge">🤖 AI DIRECTORY</span>
+      <h2>Discover Powerful AI Tools</h2>
+      <p>
+        Find AI tools for writing, design, coding, video, research,
+        productivity and more.
+      </p>
+    </div>
+
+    <div class="ai-search-box">
+      <input
+        type="text"
+        id="aiSearch"
+        placeholder="Search AI tools..."
+        oninput="filterAITools()"
+      >
+    </div>
+
+    <div class="ai-filters">
+      <button onclick="filterAICategory('all', this)" class="active">
+        All
+      </button>
+
+      <button onclick="filterAICategory('writing', this)">
+        ✍️ Writing
+      </button>
+
+      <button onclick="filterAICategory('design', this)">
+        🎨 Design
+      </button>
+
+      <button onclick="filterAICategory('coding', this)">
+        💻 Coding
+      </button>
+
+      <button onclick="filterAICategory('video', this)">
+        🎬 Video
+      </button>
+
+      <button onclick="filterAICategory('research', this)">
+        🔎 Research
+      </button>
+    </div>
+
+    <div class="ai-grid" id="aiGrid">
+
+      <!-- ChatGPT -->
+      <div class="ai-card"
+           data-ai-category="writing"
+           data-ai-name="chatgpt">
+
+        <div class="ai-icon">🤖</div>
+
+        <h3>ChatGPT</h3>
+
+        <span class="ai-category">
+          Writing & Productivity
+        </span>
+
+        <p>
+          AI assistant for writing, brainstorming,
+          learning, coding and everyday tasks.
+        </p>
+
+        <a href="https://chatgpt.com/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Claude -->
+      <div class="ai-card"
+           data-ai-category="writing"
+           data-ai-name="claude">
+
+        <div class="ai-icon">🧠</div>
+
+        <h3>Claude</h3>
+
+        <span class="ai-category">
+          Writing & Research
+        </span>
+
+        <p>
+          AI assistant designed for writing,
+          analysis, reasoning and research.
+        </p>
+
+        <a href="https://claude.ai/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Gemini -->
+      <div class="ai-card"
+           data-ai-category="research"
+           data-ai-name="google gemini">
+
+        <div class="ai-icon">✨</div>
+
+        <h3>Google Gemini</h3>
+
+        <span class="ai-category">
+          Research & Productivity
+        </span>
+
+        <p>
+          Google's AI assistant for answering questions,
+          brainstorming and productivity.
+        </p>
+
+        <a href="https://gemini.google.com/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Canva -->
+      <div class="ai-card"
+           data-ai-category="design"
+           data-ai-name="canva ai">
+
+        <div class="ai-icon">🎨</div>
+
+        <h3>Canva AI</h3>
+
+        <span class="ai-category">
+          Design
+        </span>
+
+        <p>
+          Create and edit visual content with
+          AI-powered design features.
+        </p>
+
+        <a href="https://www.canva.com/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Adobe Firefly -->
+      <div class="ai-card"
+           data-ai-category="design"
+           data-ai-name="adobe firefly">
+
+        <div class="ai-icon">🔥</div>
+
+        <h3>Adobe Firefly</h3>
+
+        <span class="ai-category">
+          AI Design
+        </span>
+
+        <p>
+          Generate creative visual content using
+          Adobe's generative AI tools.
+        </p>
+
+        <a href="https://firefly.adobe.com/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- GitHub Copilot -->
+      <div class="ai-card"
+           data-ai-category="coding"
+           data-ai-name="github copilot">
+
+        <div class="ai-icon">💻</div>
+
+        <h3>GitHub Copilot</h3>
+
+        <span class="ai-category">
+          Coding
+        </span>
+
+        <p>
+          AI-powered coding assistance for
+          developers and software projects.
+        </p>
+
+        <a href="https://github.com/features/copilot"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Runway -->
+      <div class="ai-card"
+           data-ai-category="video"
+           data-ai-name="runway">
+
+        <div class="ai-icon">🎬</div>
+
+        <h3>Runway</h3>
+
+        <span class="ai-category">
+          AI Video
+        </span>
+
+        <p>
+          AI tools for generating and editing
+          creative video content.
+        </p>
+
+        <a href="https://runwayml.com/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+
+      <!-- Perplexity -->
+      <div class="ai-card"
+           data-ai-category="research"
+           data-ai-name="perplexity">
+
+        <div class="ai-icon">🔎</div>
+
+        <h3>Perplexity</h3>
+
+        <span class="ai-category">
+          AI Research
+        </span>
+
+        <p>
+          AI-powered search and research assistant
+          for finding information online.
+        </p>
+
+        <a href="https://www.perplexity.ai/"
+           target="_blank"
+           rel="noopener">
+          Visit Tool →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+   function generateCaption() {
+  const topic =
+    document.getElementById("captionTopic").value.trim();
+
+  const result =
+    document.getElementById("captionResult");
+
+  if (!topic) {
+    result.textContent = "Please enter what your post is about.";
+    return;
+  }
+
+  const captions = [
+    "🚀 Discover something new about " + topic + "! Save this post and share it with someone who needs it. #Learn #Growth #Tips",
+
+    "✨ Let's talk about " + topic + ". Here are some things everyone should know. What do you think? 👇 #ContentCreator #Knowledge #Tips",
+
+    "🔥 If you're interested in " + topic + ", you need to see this! Don't forget to save this post for later. #Trending #Tips #Growth",
+
+    "💡 One thing I've learned about " + topic + " is that small steps can make a big difference. Keep learning, keep growing! 🚀 #Motivation #Success",
+
+    "📌 Save this! Everything you need to know about " + topic + " starts here. Share this with a friend who needs it! ❤️ #Helpful #Learn #Growth",
+
+    "🎯 Want to get better at " + topic + "? Start here. Follow for more useful tips and ideas! 🚀 #Tips #Creator #Success",
+
+    "⚡ Here's your reminder to take " + topic + " seriously. Your next big opportunity might start with what you learn today. #Mindset #Growth #Success"
+  ];
+
+  const randomCaption =
+    captions[Math.floor(Math.random() * captions.length)];
+
+  result.innerHTML = randomCaption;
+   }
+   
+.ai-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: #ede9fe;
+  color: #635bff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ai-search-box {
+  max-width: 600px;
+  margin: 0 auto 25px;
+}
+
+.ai-search-box input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 16px;
+  outline: none;
+}
+
+.ai-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.ai-filters button {
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.ai-filters button.active {
+  background: #635bff;
+  color: white;
+  border-color: #635bff;
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.ai-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(15,23,42,.08);
+  transition: .2s;
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+}
+
+.ai-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.ai-card h3 {
+  margin: 0 0 8px;
+}
+
+.ai-category {
+  display: inline-block;
+  font-size: 12px;
+  color: #635bff;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.ai-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  min-height: 75px;
+}
+
+.ai-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #635bff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+}
+
+</style> 
+   
