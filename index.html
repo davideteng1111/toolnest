@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ToolNest - Free Online Tools</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    header {
+      background: white;
+      padding: 18px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    .search {
+      width: 100%;
+      max-width: 550px;
+      padding: 16px;
+      margin-top: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .tool {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .tool h3 {
+      margin-top: 0;
+    }
+
+    .tool p {
+      color: #6b7280;
+    }
+
+    .calculator {
+      background: white;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .calculator input {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #111827;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ToolNest</div>
+</header>
+
+<section class="hero">
+  <h1>Free Tools That Get Things Done</h1>
+  <p>Calculate, create and simplify everyday tasks.</p>
+
+  <input
+    class="search"
+    type="text"
+    placeholder="Search for a tool..."
+  >
+</section>
+
+<div class="container">
+
+  <h2>Popular Tools</h2>
+
+  <div class="tools">
+
+    <div class="tool">
+      <h3>Percentage Calculator</h3>
+      <p>Calculate percentages quickly and easily.</p>
+    </div>
+
+    <div class="tool">
+      <h3>Age Calculator</h3>
+      <p>Calculate someone's exact age.</p>
+    </div>
+
+    <div class="tool">
+      <h3>Discount Calculator</h3>
+      <p>Find the final price after a discount.</p>
+    </div>
+
+    <div class="tool">
+      <h3>Word Counter</h3>
+      <p>Count words and characters instantly.</p>
+    </div>
+
+  </div>
+
+  <div class="calculator">
+
+    <h2>Percentage Calculator</h2>
+
+    <input
+      id="number"
+      type="number"
+      placeholder="Enter a number"
+    >
+
+    <input
+      id="percentage"
+      type="number"
+      placeholder="Enter percentage"
+    >
+
+    <button onclick="calculatePercentage()">
+      Calculate
+    </button>
+
+    <div id="result"></div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ToolNest. Free tools for everyone.
+</footer>
+
+<script>
+  function calculatePercentage() {
+
+    const number =
+      parseFloat(document.getElementById("number").value);
+
+    const percentage =
+      parseFloat(document.getElementById("percentage").value);
+
+    const result =
+      document.getElementById("result");
+
+    if (isNaN(number) || isNaN(percentage)) {
+      result.textContent = "Please enter both numbers.";
+      return;
+    }
+
+    const answer = (number * percentage) / 100;
+
+    result.textContent =
+      percentage + "% of " + number + " = " + answer;
+  }
+</script>
+
+</body>
+  </html>
