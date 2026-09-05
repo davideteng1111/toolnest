@@ -1,349 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ToolNest - Free Online Tools</title>
-  <meta name="description" content="ToolNest provides free, fast and easy-to-use online tools for everyone.">
+<title>ToolNest - Free Online Tools</title>
+<meta name="description" content="Free online tools for business, creators, students and everyone.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-      line-height: 1.6;
-    }
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+line-height:1.6
+}
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header{
+background:white;
+border-bottom:1px solid #e5e7eb;
+padding:18px 20px;
+}
 
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+.logo{
+font-size:25px;
+font-weight:bold
+}
 
-    .logo span {
-      color: #2563eb;
-    }
+.logo span{color:#2563eb}
 
-    .hero {
-      text-align: center;
-      padding: 65px 20px 50px;
-      background: #ffffff;
-    }
+.hero{
+text-align:center;
+padding:60px 20px;
+background:white
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.hero h1{
+font-size:42px;
+margin-bottom:15px
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #64748b;
-      font-size: 18px;
-    }
+.hero p{
+color:#64748b;
+font-size:18px;
+max-width:650px;
+margin:auto
+}
 
-    .search {
-      max-width: 600px;
-      margin: 30px auto 0;
-    }
+.search{
+max-width:600px;
+margin:28px auto 0
+}
 
-    .search input {
-      width: 100%;
-      padding: 16px 20px;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      font-size: 16px;
-      outline: none;
-    }
+.search input{
+width:100%;
+padding:16px 20px;
+border:1px solid #d1d5db;
+border-radius:12px;
+font-size:16px
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 45px 20px;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:45px 20px
+}
 
-    .section-title {
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
+.section-title{
+font-size:28px;
+margin-bottom:25px
+}
 
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px
+}
 
-    .tool-card {
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 15px;
-      border: 1px solid #e5e7eb;
-      transition: 0.2s;
-    }
+.tool-card{
+background:white;
+padding:25px;
+border-radius:15px;
+border:1px solid #e5e7eb
+}
 
-    .tool-card:hover {
-      transform: translateY(-3px);
-    }
+.tool-icon{
+font-size:32px;
+margin-bottom:10px
+}
 
-    .tool-icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.tool-card h3{
+margin-bottom:8px
+}
 
-    .tool-card h3 {
-      margin-bottom: 8px;
-    }
+.tool-card p{
+color:#64748b;
+font-size:14px;
+margin-bottom:18px
+}
 
-    .tool-card p {
-      color: #64748b;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
+button{
+border:none;
+background:#2563eb;
+color:white;
+padding:11px 18px;
+border-radius:8px;
+cursor:pointer
+}
 
-    button {
-      border: none;
-      background: #2563eb;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+button:hover{background:#1d4ed8}
 
-    button:hover {
-      background: #1d4ed8;
-    }
+.invoice{
+background:white;
+margin-top:45px;
+padding:30px;
+border-radius:15px;
+border:1px solid #e5e7eb
+}
 
-    .calculator {
-      background: #ffffff;
-      margin-top: 45px;
-      padding: 30px;
-      border-radius: 15px;
-      border: 1px solid #e5e7eb;
-    }
+.invoice h2{
+margin-bottom:20px
+}
 
-    .calculator h2 {
-      margin-bottom: 20px;
-    }
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px
+}
 
-    .calculator input {
-      width: 100%;
-      padding: 13px;
-      margin-bottom: 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+input,select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:8px;
+font-size:15px;
+margin-bottom:12px
+}
 
-    #result {
-      margin-top: 18px;
-      font-weight: bold;
-      font-size: 18px;
-    }
+.full{
+grid-column:1/-1
+}
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #172033;
-      color: white;
-      margin-top: 40px;
-    }
+.item-row{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:10px;
+margin-bottom:10px
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+.invoice-total{
+margin-top:20px;
+padding:20px;
+background:#f5f7fb;
+border-radius:10px;
+font-size:20px;
+font-weight:bold
+}
 
-      .hero {
-        padding-top: 45px;
-      }
-    }
-  </style>
+.invoice-preview{
+margin-top:30px;
+padding:25px;
+border:2px solid #172033;
+background:white
+}
+
+.invoice-preview h2{
+font-size:30px
+}
+
+.preview-line{
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid #ddd;
+padding:8px 0
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#172033;
+color:white;
+margin-top:40px
+}
+
+@media(max-width:600px){
+.hero h1{font-size:32px}
+.form-grid{grid-template-columns:1fr}
+.item-row{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Tool<span>Nest</span></div>
-  </div>
+<div class="nav">
+<div class="logo">Tool<span>Nest</span></div>
+</div>
 </header>
 
 <section class="hero">
-  <h1>Free Tools That Get Things Done</h1>
+<h1>Free Tools That Get Things Done</h1>
 
-  <p>
-    Simple, fast and useful online tools for students,
-    creators, businesses and everyone else.
-  </p>
+<p>
+Simple, fast and useful online tools for business,
+creators, students and everyone.
+</p>
 
-  <div class="search">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search for a tool..."
-      onkeyup="searchTools()"
-    >
-  </div>
+<div class="search">
+<input id="searchInput"
+placeholder="Search for a tool..."
+onkeyup="searchTools()">
+</div>
 </section>
 
 <main class="container">
 
-  <h2 class="section-title">Popular Tools</h2>
+<h2 class="section-title">Popular Tools</h2>
 
-  <div class="tools" id="tools">
+<div class="tools">
 
-    <div class="tool-card">
-      <div class="tool-icon">🧮</div>
-      <h3>Percentage Calculator</h3>
-      <p>Calculate percentages quickly and easily.</p>
-      <button onclick="scrollToCalculator()">Open Tool</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">🧮</div>
+<h3>Percentage Calculator</h3>
+<p>Calculate percentages quickly.</p>
+<button onclick="showPercentage()">Open Tool</button>
+</div>
 
-    <div class="tool-card">
-      <div class="tool-icon">🎂</div>
-      <h3>Age Calculator</h3>
-      <p>Calculate your exact age from your date of birth.</p>
-      <button>Coming Soon</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">🎂</div>
+<h3>Age Calculator</h3>
+<p>Calculate your exact age.</p>
+<button>Coming Soon</button>
+</div>
 
-    <div class="tool-card">
-      <div class="tool-icon">💰</div>
-      <h3>Discount Calculator</h3>
-      <p>Find the final price after a discount.</p>
-      <button>Coming Soon</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">💰</div>
+<h3>Discount Calculator</h3>
+<p>Calculate discounted prices.</p>
+<button>Coming Soon</button>
+</div>
 
-    <div class="tool-card">
-      <div class="tool-icon">📝</div>
-      <h3>Word Counter</h3>
-      <p>Count words and characters in your text.</p>
-      <button>Coming Soon</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">📝</div>
+<h3>Word Counter</h3>
+<p>Count words and characters.</p>
+<button>Coming Soon</button>
+</div>
 
-    <div class="tool-card">
-      <div class="tool-icon">🔤</div>
-      <h3>Case Converter</h3>
-      <p>Convert text to uppercase or lowercase.</p>
-      <button>Coming Soon</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">💼</div>
+<h3>Invoice Generator</h3>
+<p>Create professional invoices for your business.</p>
+<button onclick="openInvoice()">Create Invoice</button>
+</div>
 
-    <div class="tool-card">
-      <div class="tool-icon">🤖</div>
-      <h3>AI Tools</h3>
-      <p>Discover useful AI tools from around the world.</p>
-      <button>Coming Soon</button>
-    </div>
+<div class="tool-card">
+<div class="tool-icon">🎬</div>
+<h3>Video Tools</h3>
+<p>Create scripts, titles and ideas for videos.</p>
+<button>Coming Soon</button>
+</div>
 
-  </div>
+</div>
 
-  <div class="calculator" id="calculator">
+<div class="invoice" id="invoice">
 
-    <h2>Percentage Calculator</h2>
+<h2>🧾 Invoice Generator</h2>
 
-    <input
-      type="number"
-      id="number"
-      placeholder="Enter a number"
-    >
+<div class="form-grid">
 
-    <input
-      type="number"
-      id="percentage"
-      placeholder="Enter percentage"
-    >
+<div>
+<input id="businessName" placeholder="Your Business Name">
+</div>
 
-    <button onclick="calculatePercentage()">
-      Calculate
-    </button>
+<div>
+<input id="customerName" placeholder="Customer Name">
+</div>
 
-    <div id="result"></div>
+<div>
+<input id="invoiceNumber" placeholder="Invoice Number">
+</div>
 
-  </div>
+<div>
+<input id="invoiceDate" type="date">
+</div>
+
+<div class="full">
+<input id="businessEmail" placeholder="Business Email">
+</div>
+
+</div>
+
+<h3>Items</h3>
+
+<div class="item-row">
+<input id="item1" placeholder="Item / Service">
+<input id="qty1" type="number" placeholder="Qty" value="1">
+<input id="price1" type="number" placeholder="Price" value="0">
+</div>
+
+<div class="item-row">
+<input id="item2" placeholder="Item / Service">
+<input id="qty2" type="number" placeholder="Qty" value="1">
+<input id="price2" type="number" placeholder="Price" value="0">
+</div>
+
+<div class="item-row">
+<input id="item3" placeholder="Item / Service">
+<input id="qty3" type="number" placeholder="Qty" value="1">
+<input id="price3" type="number" placeholder="Price" value="0">
+</div>
+
+<label>Tax (%)</label>
+<input id="tax" type="number" value="0">
+
+<br>
+
+<button onclick="generateInvoice()">Generate Invoice</button>
+
+<div class="invoice-total">
+Total: <span id="total">0.00</span>
+</div>
+
+<div class="invoice-preview" id="preview">
+
+<h2>Invoice</h2>
+
+<p id="previewBusiness">Your Business</p>
+<p id="previewCustomer">Customer</p>
+
+<hr><br>
+
+<div id="previewItems"></div>
+
+<br>
+
+<div class="preview-line">
+<strong>Total</strong>
+<strong id="previewTotal">0.00</strong>
+</div>
+
+<br>
+
+<button onclick="window.print()">Print / Save PDF</button>
+
+</div>
+
+</div>
 
 </main>
 
 <footer>
-  <p>© 2026 ToolNest. Free tools for everyone.</p>
+<p>© 2026 ToolNest. Free tools for everyone.</p>
 </footer>
 
 <script>
 
-function calculatePercentage() {
-
-  const number = parseFloat(
-    document.getElementById("number").value
-  );
-
-  const percentage = parseFloat(
-    document.getElementById("percentage").value
-  );
-
-  const result = document.getElementById("result");
-
-  if (isNaN(number) || isNaN(percentage)) {
-    result.innerText = "Please enter both numbers.";
-    return;
-  }
-
-  const answer = (number * percentage) / 100;
-
-  result.innerText = percentage + "% of " + number + " = " + answer;
+function openInvoice(){
+document.getElementById("invoice").scrollIntoView({
+behavior:"smooth"
+});
 }
 
+function showPercentage(){
+alert("Percentage Calculator is already available. More calculators are coming soon!");
+}
 
-function scrollToCalculator() {
+function searchTools(){
 
-  document.getElementById("calculator").scrollIntoView({
-    behavior: "smooth"
-  });
+let search=document.getElementById("searchInput")
+.value.toLowerCase();
+
+let cards=document.querySelectorAll(".tool-card");
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(search)?"block":"none";
+
+});
 
 }
 
+function generateInvoice(){
 
-function searchTools() {
+let business=document.getElementById("businessName").value || "Your Business";
+let customer=document.getElementById("customerName").value || "Customer";
 
-  const search = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+let taxRate=parseFloat(document.getElementById("tax").value)||0;
 
-  const cards = document.querySelectorAll(".tool-card");
+let subtotal=0;
 
-  cards.forEach(function(card) {
+let itemsHTML="";
 
-    const text = card.innerText.toLowerCase();
+for(let i=1;i<=3;i++){
 
-    if (text.includes(search)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+let name=document.getElementById("item"+i).value;
 
-  });
+let qty=parseFloat(document.getElementById("qty"+i).value)||0;
+
+let price=parseFloat(document.getElementById("price"+i).value)||0;
+
+let amount=qty*price;
+
+subtotal+=amount;
+
+if(name && amount>0){
+
+itemsHTML+=`
+<div class="preview-line">
+<span>${name} × ${qty}</span>
+<span>${amount.toFixed(2)}</span>
+</div>
+`;
+
+}
+
+}
+
+let tax=subtotal*(taxRate/100);
+
+let total=subtotal+tax;
+
+document.getElementById("previewBusiness").innerText=business;
+
+document.getElementById("previewCustomer").innerText=
+"Bill To: "+customer;
+
+document.getElementById("previewItems").innerHTML=itemsHTML;
+
+document.getElementById("previewTotal").innerText=
+total.toFixed(2);
+
+document.getElementById("total").innerText=
+total.toFixed(2);
 
 }
 
