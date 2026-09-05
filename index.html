@@ -2012,3 +2012,147 @@ if (globalSearch) {
 }
 
 </style>
+
+   <script>
+
+// ===============================
+// PROFIT CALCULATOR
+// ===============================
+
+function calculateProfit() {
+
+  const revenue = parseFloat(
+    document.getElementById("profitRevenue").value
+  );
+
+  const cost = parseFloat(
+    document.getElementById("profitCost").value
+  );
+
+  const result =
+    document.getElementById("profitResult");
+
+  if (isNaN(revenue) || isNaN(cost)) {
+    result.textContent = "Please enter valid numbers.";
+    return;
+  }
+
+  const profit = revenue - cost;
+
+  const margin =
+    revenue > 0
+      ? (profit / revenue) * 100
+      : 0;
+
+  result.textContent =
+    "Profit: " +
+    profit.toFixed(2) +
+    " • Margin: " +
+    margin.toFixed(1) +
+    "%";
+}
+
+
+// ===============================
+// MARKUP CALCULATOR
+// ===============================
+
+function calculateMarkup() {
+
+  const cost = parseFloat(
+    document.getElementById("markupCost").value
+  );
+
+  const markup = parseFloat(
+    document.getElementById("markupPercent").value
+  );
+
+  const result =
+    document.getElementById("markupResult");
+
+  if (isNaN(cost) || isNaN(markup)) {
+    result.textContent = "Please enter valid numbers.";
+    return;
+  }
+
+  const markupAmount =
+    (cost * markup) / 100;
+
+  const sellingPrice =
+    cost + markupAmount;
+
+  result.textContent =
+    "Markup: " +
+    markupAmount.toFixed(2) +
+    " • Selling price: " +
+    sellingPrice.toFixed(2);
+}
+
+
+// ===============================
+// VAT CALCULATOR
+// ===============================
+
+function calculateVAT() {
+
+  const amount = parseFloat(
+    document.getElementById("vatAmount").value
+  );
+
+  const vatPercent = parseFloat(
+    document.getElementById("vatPercent").value
+  );
+
+  const result =
+    document.getElementById("vatResult");
+
+  if (isNaN(amount) || isNaN(vatPercent)) {
+    result.textContent = "Please enter valid numbers.";
+    return;
+  }
+
+  const vat =
+    (amount * vatPercent) / 100;
+
+  const total =
+    amount + vat;
+
+  result.textContent =
+    "VAT: " +
+    vat.toFixed(2) +
+    " • Total: " +
+    total.toFixed(2);
+}
+
+
+// ===============================
+// COMMISSION CALCULATOR
+// ===============================
+
+function calculateCommission() {
+
+  const sales = parseFloat(
+    document.getElementById("commissionSales").value
+  );
+
+  const percent = parseFloat(
+    document.getElementById("commissionPercent").value
+  );
+
+  const result =
+    document.getElementById("commissionResult");
+
+  if (isNaN(sales) || isNaN(percent)) {
+    result.textContent = "Please enter valid numbers.";
+    return;
+  }
+
+  const commission =
+    (sales * percent) / 100;
+
+  result.textContent =
+    "Commission: " +
+    commission.toFixed(2);
+}
+
+   </script>
