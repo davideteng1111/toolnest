@@ -2156,3 +2156,313 @@ function calculateCommission() {
 }
 
    </script>
+
+   <!-- ===============================
+     CREATOR STUDIO
+================================ -->
+
+<section id="creator" class="tools-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-eyebrow">🎬 Creator Studio</span>
+      <h2>Create better content, faster.</h2>
+      <p>
+        Free tools for YouTubers, TikTok creators, Instagram creators and
+        content marketers.
+      </p>
+    </div>
+
+    <div class="tool-grid">
+
+      <!-- PRO TITLE GENERATOR -->
+      <div class="tool-card"
+           data-category="creator"
+           data-tool-name="pro title generator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon purple">✨</div>
+          <span class="tool-label">Creator</span>
+        </div>
+
+        <h3>Pro Title Generator</h3>
+
+        <p>
+          Generate attention-grabbing content titles.
+        </p>
+
+        <input
+          type="text"
+          id="titleTopic"
+          placeholder="Enter your topic..."
+        >
+
+        <button
+          class="tool-btn"
+          onclick="generateTitles()"
+        >
+          Generate Titles
+        </button>
+
+        <div
+          class="tool-result"
+          id="titleResult"
+        >
+          Your titles will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- VIRAL HOOK GENERATOR -->
+      <div class="tool-card"
+           data-category="creator"
+           data-tool-name="viral hook generator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon orange">🪝</div>
+          <span class="tool-label">Creator</span>
+        </div>
+
+        <h3>Viral Hook Generator</h3>
+
+        <p>
+          Create strong opening hooks for your videos.
+        </p>
+
+        <input
+          type="text"
+          id="hookTopic"
+          placeholder="Enter your topic..."
+        >
+
+        <button
+          class="tool-btn"
+          onclick="generateHooks()"
+        >
+          Generate Hooks
+        </button>
+
+        <div
+          class="tool-result"
+          id="hookResult"
+        >
+          Your hooks will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- CONTENT IDEA GENERATOR -->
+      <div class="tool-card"
+           data-category="creator"
+           data-tool-name="content idea generator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon blue">💡</div>
+          <span class="tool-label">Creator</span>
+        </div>
+
+        <h3>Content Idea Generator</h3>
+
+        <p>
+          Get fresh ideas for your next piece of content.
+        </p>
+
+        <input
+          type="text"
+          id="ideaTopic"
+          placeholder="Enter your niche..."
+        >
+
+        <button
+          class="tool-btn"
+          onclick="generateIdeas()"
+        >
+          Generate Ideas
+        </button>
+
+        <div
+          class="tool-result"
+          id="ideaResult"
+        >
+          Your ideas will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- SOCIAL CAPTION GENERATOR -->
+      <div class="tool-card"
+           data-category="creator"
+           data-tool-name="social caption generator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon pink">📱</div>
+          <span class="tool-label">Creator</span>
+        </div>
+
+        <h3>Social Caption Generator</h3>
+
+        <p>
+          Create engaging captions for social media posts.
+        </p>
+
+        <input
+          type="text"
+          id="captionTopic"
+          placeholder="What is your post about?"
+        >
+
+        <button
+          class="tool-btn"
+          onclick="generateCaption()"
+        >
+          Generate Caption
+        </button>
+
+        <div
+          class="tool-result"
+          id="captionResult"
+        >
+          Your caption will appear here.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+#creator {
+  padding: 80px 0;
+  background: var(--light);
+}
+
+#creator .tool-result {
+  min-height: 60px;
+  line-height: 1.6;
+}
+
+</style>
+
+   <script>
+
+// ===============================
+// PRO TITLE GENERATOR
+// ===============================
+
+function generateTitles() {
+  const topic = document.getElementById("titleTopic").value.trim();
+  const result = document.getElementById("titleResult");
+
+  if (!topic) {
+    result.textContent = "Please enter a topic first.";
+    return;
+  }
+
+  const titles = [
+    "The Ultimate Guide to " + topic,
+    "7 Things You Need to Know About " + topic,
+    "How to Master " + topic + " in 2026",
+    "I Tried " + topic + " — Here's What Happened",
+    "The Truth About " + topic,
+    "Beginner's Guide to " + topic,
+    "10 Mistakes Everyone Makes With " + topic
+  ];
+
+  result.innerHTML = titles
+    .map((title, i) => (i + 1) + ". " + title)
+    .join("<br>");
+}
+
+
+// ===============================
+// VIRAL HOOK GENERATOR
+// ===============================
+
+function generateHooks() {
+  const topic = document.getElementById("hookTopic").value.trim();
+  const result = document.getElementById("hookResult");
+
+  if (!topic) {
+    result.textContent = "Please enter a topic first.";
+    return;
+  }
+
+  const hooks = [
+    "Nobody tells you this about " + topic + "...",
+    "Stop scrolling if you want to learn " + topic + ".",
+    "I wish I knew this before starting with " + topic + ".",
+    "Here's what actually works when it comes to " + topic + ".",
+    "You are probably doing " + topic + " wrong.",
+    "This changed everything I knew about " + topic + ".",
+    "Before you try " + topic + ", watch this."
+  ];
+
+  result.innerHTML = hooks
+    .map((hook, i) => (i + 1) + ". " + hook)
+    .join("<br>");
+}
+
+
+// ===============================
+// CONTENT IDEA GENERATOR
+// ===============================
+
+function generateIdeas() {
+  const topic = document.getElementById("ideaTopic").value.trim();
+  const result = document.getElementById("ideaResult");
+
+  if (!topic) {
+    result.textContent = "Please enter your niche first.";
+    return;
+  }
+
+  const ideas = [
+    "5 Beginner Tips for " + topic,
+    "Common Mistakes People Make With " + topic,
+    "The Best Tools for " + topic,
+    "Beginner vs Expert: " + topic,
+    "10 Facts About " + topic,
+    "How I Would Start " + topic + " Today",
+    "The Future of " + topic
+  ];
+
+  result.innerHTML = ideas
+    .map((idea, i) => (i + 1) + ". " + idea)
+    .join("<br>");
+}
+
+
+// ===============================
+// SOCIAL CAPTION GENERATOR
+// ===============================
+
+function generateCaption() {
+  const topic =
+    document.getElementById("captionTopic").value.trim();
+
+  const result =
+    document.getElementById("captionResult");
+
+  if (!topic) {
+    result.textContent = "Please enter what your post is about.";
+    return;
+  }
+
+  const caption =
+    "🚀 Here's something you should know about " +
+    topic +
+    ".\n\n" +
+    "Save this post and share it with someone who needs it! " +
+    "#ContentCreator #Tips #Learn #Growth";
+
+  result.innerHTML =
+    caption.replace(/\n/g, "<br>");
+}
+
+   </script>
