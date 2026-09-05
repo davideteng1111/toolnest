@@ -1772,3 +1772,243 @@ if (globalSearch) {
 }
 
 </script>
+
+   <!-- ===============================
+     BUSINESS TOOLS
+================================ -->
+
+<section id="business" class="tools-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-eyebrow">💼 Business</span>
+      <h2>Tools for smarter business.</h2>
+      <p>
+        Simple calculators to help you price, plan and manage your business.
+      </p>
+    </div>
+
+    <div class="tool-grid">
+
+      <!-- PROFIT CALCULATOR -->
+      <div class="tool-card"
+           data-category="business"
+           data-tool-name="profit calculator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon green">📈</div>
+          <span class="tool-label">Business</span>
+        </div>
+
+        <h3>Profit Calculator</h3>
+
+        <p>
+          Calculate your profit and profit margin.
+        </p>
+
+        <input
+          type="number"
+          id="profitRevenue"
+          placeholder="Revenue"
+        >
+
+        <input
+          type="number"
+          id="profitCost"
+          placeholder="Total cost"
+        >
+
+        <button
+          class="tool-btn"
+          onclick="calculateProfit()"
+        >
+          Calculate Profit
+        </button>
+
+        <div
+          class="tool-result"
+          id="profitResult"
+        >
+          Your result will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- MARKUP CALCULATOR -->
+      <div class="tool-card"
+           data-category="business"
+           data-tool-name="markup calculator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon purple">💰</div>
+          <span class="tool-label">Business</span>
+        </div>
+
+        <h3>Markup Calculator</h3>
+
+        <p>
+          Find your selling price from cost and markup.
+        </p>
+
+        <input
+          type="number"
+          id="markupCost"
+          placeholder="Cost price"
+        >
+
+        <input
+          type="number"
+          id="markupPercent"
+          placeholder="Markup %"
+        >
+
+        <button
+          class="tool-btn"
+          onclick="calculateMarkup()"
+        >
+          Calculate Markup
+        </button>
+
+        <div
+          class="tool-result"
+          id="markupResult"
+        >
+          Your result will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- VAT CALCULATOR -->
+      <div class="tool-card"
+           data-category="business"
+           data-tool-name="vat calculator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon blue">🧾</div>
+          <span class="tool-label">Business</span>
+        </div>
+
+        <h3>VAT Calculator</h3>
+
+        <p>
+          Add or remove VAT from a price.
+        </p>
+
+        <input
+          type="number"
+          id="vatAmount"
+          placeholder="Amount"
+        >
+
+        <input
+          type="number"
+          id="vatPercent"
+          placeholder="VAT %"
+        >
+
+        <button
+          class="tool-btn"
+          onclick="calculateVAT()"
+        >
+          Calculate VAT
+        </button>
+
+        <div
+          class="tool-result"
+          id="vatResult"
+        >
+          Your result will appear here.
+        </div>
+
+      </div>
+
+
+      <!-- COMMISSION CALCULATOR -->
+      <div class="tool-card"
+           data-category="business"
+           data-tool-name="commission calculator">
+
+        <div class="tool-card-top">
+          <div class="tool-icon orange">🤝</div>
+          <span class="tool-label">Business</span>
+        </div>
+
+        <h3>Commission Calculator</h3>
+
+        <p>
+          Calculate sales commission quickly.
+        </p>
+
+        <input
+          type="number"
+          id="commissionSales"
+          placeholder="Sales amount"
+        >
+
+        <input
+          type="number"
+          id="commissionPercent"
+          placeholder="Commission %"
+        >
+
+        <button
+          class="tool-btn"
+          onclick="calculateCommission()"
+        >
+          Calculate Commission
+        </button>
+
+        <div
+          class="tool-result"
+          id="commissionResult"
+        >
+          Your result will appear here.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     BUSINESS TOOL STYLES
+================================ -->
+
+<style>
+
+#business {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 5vw, 44px);
+  margin: 0 0 12px;
+  color: var(--dark);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+</style>
