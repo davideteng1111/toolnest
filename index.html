@@ -6,6 +6,186 @@
 <meta name="description" content="ToolNest - Free online tools, calculators, business tools, creator tools and AI tools.">
 <title>ToolNest - Free Online Tools & AI Tools</title>
 
+  /* ===== TOOLNEST PRO UI UPGRADE ===== */
+
+body {
+  background: #f6f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: #687386;
+  font-size: 16px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 25px rgba(20, 30, 50, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(20, 30, 50, 0.11);
+}
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #687386;
+  line-height: 1.5;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dce1e9;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #5b67f1;
+  box-shadow: 0 0 0 3px rgba(91, 103, 241, 0.12);
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-top: 6px;
+  background: #5b67f1;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.result {
+  margin-top: 14px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f3f5f9;
+  border: 1px solid #e2e6ed;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* AI DIRECTORY */
+
+.ai-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.ai-controls {
+  margin-bottom: 25px;
+}
+
+.ai-search {
+  width: 100%;
+  max-width: 650px;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.filter-btn {
+  border: 1px solid #dce1e9;
+  background: white;
+  border-radius: 30px;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background: #5b67f1;
+  color: white;
+  border-color: #5b67f1;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .section-title h2 {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+}
 <style>
 *{
   box-sizing:border-box;
