@@ -3,294 +3,411 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ToolNest - Free Online Tools</title>
-
-<meta name="description" content="ToolNest provides free online calculators, writing tools, business tools, creator tools and AI tools.">
-<meta name="keywords" content="free online tools, calculators, invoice generator, AI tools, video tools, writing tools">
+<meta name="description" content="ToolNest - Free online tools, calculators, business tools, creator tools and AI tools.">
+<title>ToolNest - Free Online Tools & AI Tools</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #172033;
-  line-height: 1.6;
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.6;
 }
 
-header {
-  background: #111827;
-  color: white;
-  padding: 18px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+header{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:white;
+  padding:18px 5%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
-.nav {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo {
-  font-size: 25px;
-  font-weight: bold;
+.logo{
+  font-size:25px;
+  font-weight:800;
 }
 
-.logo span {
-  color: #60a5fa;
+.logo span{
+  color:#93c5fd;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 18px;
-  font-size: 14px;
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
 }
 
-.hero {
-  background: linear-gradient(135deg, #111827, #2563eb);
-  color: white;
-  text-align: center;
-  padding: 70px 20px;
+.hero{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:white;
+  padding:70px 20px 85px;
+  text-align:center;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+.hero h1{
+  font-size:clamp(34px,7vw,60px);
+  margin-bottom:15px;
 }
 
-.hero p {
-  max-width: 650px;
-  margin: auto;
-  font-size: 18px;
-  opacity: .9;
+.hero p{
+  max-width:700px;
+  margin:0 auto 28px;
+  font-size:18px;
+  opacity:.92;
 }
 
-.search-box {
-  max-width: 650px;
-  margin: 30px auto 0;
-  display: flex;
+.search{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  background:white;
+  border-radius:14px;
+  padding:6px;
 }
 
-.search-box input {
-  flex: 1;
-  padding: 15px;
-  border: none;
-  border-radius: 8px 0 0 8px;
-  font-size: 16px;
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:14px;
+  font-size:16px;
+  border-radius:10px;
 }
 
-.search-box button {
-  border-radius: 0 8px 8px 0;
+.search button{
+  border:0;
+  background:#2563eb;
+  color:white;
+  padding:0 22px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 15px;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:45px 20px;
 }
 
-button:hover {
-  opacity: .9;
+.section-title{
+  text-align:center;
+  margin-bottom:30px;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 45px 20px;
+.section-title h2{
+  font-size:32px;
+  margin-bottom:8px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 25px;
+.section-title p{
+  color:#64748b;
 }
 
-.section-title h2 {
-  font-size: 30px;
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.card{
+  background:white;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 5px 20px rgba(15,23,42,.07);
+  border:1px solid #e5e7eb;
 }
 
-.tool-card {
-  background: white;
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.07);
+.card h3{
+  margin-bottom:8px;
 }
 
-.tool-card h3 {
-  margin-bottom: 8px;
+.card p{
+  color:#64748b;
+  margin-bottom:15px;
 }
 
-.tool-card p {
-  color: #667085;
-  margin-bottom: 15px;
+.card input,
+.card select,
+.card textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  margin:7px 0;
+  font-size:15px;
 }
 
-.tool-card input,
-.tool-card select,
-.tool-card textarea {
-  width: 100%;
-  padding: 11px;
-  margin: 6px 0;
-  border: 1px solid #d0d5dd;
-  border-radius: 7px;
-  font-size: 15px;
+.card textarea{
+  min-height:100px;
+  resize:vertical;
 }
 
-.result-box {
-  background: #f8fafc;
-  border-radius: 8px;
-  padding: 15px;
-  margin-top: 15px;
-  overflow-wrap: anywhere;
+.btn{
+  background:#2563eb;
+  color:white;
+  border:0;
+  padding:12px 18px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:8px;
 }
 
-.result-box h4 {
-  margin-top: 15px;
-  margin-bottom: 6px;
+.btn:hover{
+  opacity:.9;
 }
 
-.result-box ul {
-  padding-left: 20px;
+.result{
+  margin-top:15px;
+  padding:13px;
+  background:#eff6ff;
+  border-radius:9px;
+  font-weight:bold;
+  word-wrap:break-word;
 }
 
-pre {
-  white-space: pre-wrap;
-  font-family: Arial, sans-serif;
+.ai-section{
+  background:#eef4ff;
 }
 
-.full-tool {
-  margin-top: 45px;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.07);
+.ai-controls{
+  max-width:850px;
+  margin:0 auto 30px;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+.ai-search{
+  width:100%;
+  padding:15px;
+  border:1px solid #cbd5e1;
+  border-radius:12px;
+  font-size:16px;
+  margin-bottom:15px;
+  outline:none;
 }
 
-.invoice-items {
-  margin-top: 20px;
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
 }
 
-.invoice-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 8px;
+.filter-btn{
+  border:1px solid #cbd5e1;
+  background:white;
+  padding:9px 14px;
+  border-radius:30px;
+  cursor:pointer;
 }
 
-.invoice-preview {
-  margin-top: 25px;
-  border: 1px solid #ddd;
-  padding: 25px;
-  background: white;
+.filter-btn.active{
+  background:#2563eb;
+  color:white;
+  border-color:#2563eb;
 }
 
-.invoice-preview table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.ai-card{
+  position:relative;
+}
+
+.ai-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eff6ff;
+  border-radius:13px;
+  font-size:27px;
+  margin-bottom:15px;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 9px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.free{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.freemium{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.paid{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.category{
+  color:#64748b;
+  font-size:13px;
+  margin-bottom:5px;
+}
+
+.ai-link{
+  display:inline-block;
+  text-decoration:none;
+  background:#111827;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  margin-top:8px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.featured{
+  border:2px solid #2563eb;
+}
+
+.featured-label{
+  position:absolute;
+  right:15px;
+  top:15px;
+  background:#2563eb;
+  color:white;
+  padding:4px 8px;
+  border-radius:20px;
+  font-size:11px;
+}
+
+.invoice-box{
+  background:#f8fafc;
+  padding:18px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.invoice-preview{
+  background:white;
+  padding:25px;
+  border:1px solid #ddd;
+  margin-top:20px;
+  overflow-x:auto;
+}
+
+.invoice-preview table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
 }
 
 .invoice-preview th,
-.invoice-preview td {
-  border-bottom: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
+.invoice-preview td{
+  border-bottom:1px solid #ddd;
+  padding:9px;
+  text-align:left;
 }
 
-.invoice-total {
-  text-align: right;
-  margin-top: 20px;
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-bottom:35px;
 }
 
-footer {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+.stat{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
 }
 
-.hidden {
-  display: none;
+.stat strong{
+  display:block;
+  font-size:30px;
+  color:#2563eb;
 }
 
-@media(max-width: 650px) {
-  .hero h1 {
-    font-size: 32px;
+.cta{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:white;
+  border-radius:20px;
+  padding:45px 25px;
+  text-align:center;
+}
+
+.cta h2{
+  margin-bottom:10px;
+}
+
+footer{
+  background:#111827;
+  color:#cbd5e1;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:40px;
+}
+
+footer strong{
+  color:white;
+}
+
+@media(max-width:600px){
+  nav a{
+    display:none;
   }
 
-  nav {
-    display: none;
+  .hero{
+    padding-top:50px;
   }
 
-  .form-grid {
-    grid-template-columns: 1fr;
+  .search{
+    flex-direction:column;
+    gap:6px;
   }
 
-  .invoice-row {
-    grid-template-columns: 1fr;
+  .search button{
+    padding:13px;
   }
 
-  .search-box {
-    display: block;
-  }
-
-  .search-box input {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 8px;
-  }
-
-  .search-box button {
-    width: 100%;
-    border-radius: 8px;
+  .container{
+    padding:35px 15px;
   }
 }
 
-@media print {
-  body * {
-    visibility: hidden;
+@media print{
+  header,
+  .hero,
+  .section-title,
+  .no-print,
+  footer{
+    display:none!important;
   }
 
-  #invoicePreview,
-  #invoicePreview * {
-    visibility: visible;
+  body{
+    background:white;
   }
 
-  #invoicePreview {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-
-  button {
-    display: none;
+  .invoice-preview{
+    border:0;
   }
 }
 </style>
@@ -300,95 +417,117 @@ footer {
 
 <header>
   <div class="nav">
-    <div class="logo">Tool<span>Nest</span></div>
-
+    <div class="logo">Tool<span>Nest</span> 🚀</div>
     <nav>
       <a href="#tools">Tools</a>
       <a href="#business">Business</a>
+      <a href="#ai">AI Tools</a>
       <a href="#creator">Creator</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Free Tools. One Simple Place.</h1>
-
+  <h1>Free Tools. Smarter Work.</h1>
   <p>
-    Useful calculators, writing tools, business tools,
-    creator tools and more — completely free.
+    ToolNest gives you useful calculators, business tools, creator tools and
+    a growing directory of AI tools — all in one place.
   </p>
 
-  <div class="search-box">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search for a tool..."
-      onkeyup="searchTools()"
-    >
-    <button onclick="searchTools()">Search</button>
+  <div class="search">
+    <input id="globalSearch" type="text"
+      placeholder="Search calculators, AI tools, invoice tools..."
+      onkeyup="globalSearch()">
+    <button onclick="globalSearch()">Search</button>
   </div>
 </section>
 
-<main>
 
-<section class="container" id="tools">
+<!-- POPULAR TOOLS -->
+<section id="tools" class="container">
 
   <div class="section-title">
-    <h2>Popular Tools</h2>
+    <h2>🛠️ Popular Free Tools</h2>
     <p>Simple tools you can use instantly.</p>
   </div>
 
-  <div class="tools-grid" id="toolsGrid">
-
-    <div class="tool-card searchable">
-      <h3>🧮 Percentage Calculator</h3>
-      <p>Calculate percentages quickly.</p>
-
-      <input type="number" id="percentNumber" placeholder="Enter number">
-      <input type="number" id="percentValue" placeholder="Enter percentage">
-
-      <button onclick="calculatePercentage()">Calculate</button>
-
-      <div class="result-box" id="percentageResult"></div>
+  <div class="stats">
+    <div class="stat">
+      <strong>20+</strong>
+      Tools
     </div>
 
-    <div class="tool-card searchable">
+    <div class="stat">
+      <strong>8</strong>
+      AI Categories
+    </div>
+
+    <div class="stat">
+      <strong>100%</strong>
+      Browser Based
+    </div>
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- Percentage -->
+    <div class="card searchable">
+      <h3>📊 Percentage Calculator</h3>
+      <p>Find a percentage of any number.</p>
+
+      <input id="percent" type="number" placeholder="Percentage">
+      <input id="percentNumber" type="number" placeholder="Number">
+
+      <button class="btn" onclick="calculatePercentage()">Calculate</button>
+
+      <div class="result" id="percentageResult">
+        Your answer will appear here.
+      </div>
+    </div>
+
+
+    <!-- Age -->
+    <div class="card searchable">
       <h3>🎂 Age Calculator</h3>
-      <p>Calculate someone's age.</p>
+      <p>Calculate your exact age.</p>
 
-      <input type="date" id="birthDate">
+      <input id="birthDate" type="date">
 
-      <button onclick="calculateAge()">Calculate Age</button>
+      <button class="btn" onclick="calculateAge()">Calculate Age</button>
 
-      <div class="result-box" id="ageResult"></div>
+      <div class="result" id="ageResult">
+        Your age will appear here.
+      </div>
     </div>
 
-    <div class="tool-card searchable">
+
+    <!-- Discount -->
+    <div class="card searchable">
       <h3>🏷️ Discount Calculator</h3>
-      <p>Find the final price after a discount.</p>
+      <p>Calculate sale prices and savings.</p>
 
-      <input type="number" id="originalPrice" placeholder="Original price">
-      <input type="number" id="discountPercent" placeholder="Discount %">
+      <input id="originalPrice" type="number" placeholder="Original price">
+      <input id="discountPercent" type="number" placeholder="Discount %">
 
-      <button onclick="calculateDiscount()">Calculate</button>
+      <button class="btn" onclick="calculateDiscount()">Calculate</button>
 
-      <div class="result-box" id="discountResult"></div>
+      <div class="result" id="discountResult">
+        Your result will appear here.
+      </div>
     </div>
 
-    <div class="tool-card searchable">
-      <h3>📝 Word & Character Counter</h3>
-      <p>Count words and characters.</p>
 
-      <textarea
-        id="counterText"
-        rows="5"
-        placeholder="Type or paste your text..."
-        oninput="countWords()"
-      ></textarea>
+    <!-- Counter -->
+    <div class="card searchable">
+      <h3>✍️ Word & Character Counter</h3>
+      <p>Count words and characters instantly.</p>
 
-      <div class="result-box" id="counterResult">
-        Words: 0<br>
-        Characters: 0
+      <textarea id="counterText"
+        placeholder="Type or paste your text here..."
+        oninput="countWords()"></textarea>
+
+      <div class="result" id="counterResult">
+        Words: 0 | Characters: 0
       </div>
     </div>
 
@@ -396,7 +535,8 @@ footer {
 </section>
 
 
-<section class="container" id="business">
+<!-- BUSINESS -->
+<section id="business" class="container">
 
   <div class="section-title">
     <h2>💼 Business Tools</h2>
@@ -405,610 +545,522 @@ footer {
 
   <div class="tools-grid">
 
-    <div class="tool-card searchable">
-      <h3>🧾 Invoice Generator</h3>
-      <p>Create a professional invoice and print or save it as PDF.</p>
+    <!-- Profit -->
+    <div class="card searchable">
+      <h3>💰 Profit Margin Calculator</h3>
+      <p>Calculate your profit and margin.</p>
 
-      <button onclick="showInvoice()">Create Invoice</button>
+      <input id="costPrice" type="number" placeholder="Cost price">
+      <input id="sellingPrice" type="number" placeholder="Selling price">
+
+      <button class="btn" onclick="calculateProfit()">Calculate</button>
+
+      <div class="result" id="profitResult">
+        Your result will appear here.
+      </div>
     </div>
 
-    <div class="tool-card searchable">
-      <h3>🧮 Profit Margin Calculator</h3>
-      <p>Calculate your profit margin.</p>
 
-      <input type="number" id="costPrice" placeholder="Cost price">
-      <input type="number" id="sellingPrice" placeholder="Selling price">
-
-      <button onclick="calculateProfit()">Calculate</button>
-
-      <div class="result-box" id="profitResult"></div>
-    </div>
-
-    <div class="tool-card searchable">
+    <!-- Business names -->
+    <div class="card searchable">
       <h3>💡 Business Name Generator</h3>
       <p>Generate business name ideas.</p>
 
-      <input
-        type="text"
-        id="businessKeyword"
-        placeholder="Example: Technology"
-      >
+      <input id="businessKeyword"
+        placeholder="Example: Fashion, Tech, Food">
 
-      <button onclick="generateBusinessNames()">Generate</button>
+      <button class="btn" onclick="generateBusinessNames()">
+        Generate Names
+      </button>
 
-      <div class="result-box" id="businessNames"></div>
+      <div class="result" id="businessNameResult">
+        Your ideas will appear here.
+      </div>
+    </div>
+
+
+    <!-- Invoice -->
+    <div class="card searchable" style="grid-column:1/-1">
+
+      <h3>🧾 Invoice Generator</h3>
+      <p>Create a professional invoice and print/save it as PDF.</p>
+
+      <div class="invoice-box">
+
+        <input id="businessName"
+          placeholder="Your Business Name">
+
+        <input id="customerName"
+          placeholder="Customer Name">
+
+        <input id="invoiceNumber"
+          placeholder="Invoice Number">
+
+        <input id="invoiceDate"
+          type="date">
+
+        <input id="businessEmail"
+          type="email"
+          placeholder="Business Email">
+
+        <input id="taxRate"
+          type="number"
+          placeholder="Tax % (optional)">
+
+        <h4>Items / Services</h4>
+
+        <input id="item1"
+          placeholder="Item or service">
+
+        <input id="qty1"
+          type="number"
+          placeholder="Quantity"
+          value="1">
+
+        <input id="price1"
+          type="number"
+          placeholder="Price">
+
+        <input id="item2"
+          placeholder="Second item/service">
+
+        <input id="qty2"
+          type="number"
+          placeholder="Quantity"
+          value="1">
+
+        <input id="price2"
+          type="number"
+          placeholder="Price">
+
+        <input id="item3"
+          placeholder="Third item/service">
+
+        <input id="qty3"
+          type="number"
+          placeholder="Quantity"
+          value="1">
+
+        <input id="price3"
+          type="number"
+          placeholder="Price">
+
+        <button class="btn" onclick="generateInvoice()">
+          Generate Invoice
+        </button>
+
+        <button class="btn no-print"
+          onclick="window.print()">
+          🖨️ Print / Save PDF
+        </button>
+
+      </div>
+
+      <div id="invoicePreview"
+        class="invoice-preview"
+        style="display:none">
+      </div>
+
     </div>
 
   </div>
 </section>
 
 
-<section class="container" id="creator">
+<!-- CREATOR -->
+<section id="creator" class="container">
 
   <div class="section-title">
     <h2>🎬 Creator & Video Tools</h2>
-    <p>Create ideas and content for YouTube, TikTok, Instagram and more.</p>
+    <p>Create ideas and content faster.</p>
   </div>
 
   <div class="tools-grid">
 
-    <div class="tool-card searchable">
+    <!-- YouTube title -->
+    <div class="card searchable">
       <h3>🎯 YouTube Title Generator</h3>
-      <p>Generate clickable video title ideas.</p>
+      <p>Generate clickable YouTube title ideas.</p>
 
-      <input
-        type="text"
-        id="titleTopic"
-        placeholder="Enter your video topic"
-      >
+      <input id="titleTopic"
+        placeholder="Enter your video topic">
 
-      <button onclick="generateTitles()">Generate Titles</button>
+      <button class="btn" onclick="generateTitles()">
+        Generate Titles
+      </button>
 
-      <div class="result-box" id="titleResults"></div>
+      <div class="result" id="titleResult">
+        Your titles will appear here.
+      </div>
     </div>
 
 
-    <div class="tool-card searchable">
+    <!-- Video ideas -->
+    <div class="card searchable">
       <h3>💡 Video Ideas Generator</h3>
-      <p>Generate content ideas for your next videos.</p>
+      <p>Get content ideas for your next video.</p>
 
-      <input
-        type="text"
-        id="ideaTopic"
-        placeholder="Enter your topic"
-      >
+      <input id="videoTopic"
+        placeholder="Example: Fitness, Gaming, Business">
 
-      <button onclick="generateVideoIdeas()">Generate Ideas</button>
+      <button class="btn" onclick="generateVideoIdeas()">
+        Generate Ideas
+      </button>
 
-      <div class="result-box" id="ideaResults"></div>
+      <div class="result" id="videoIdeasResult">
+        Your ideas will appear here.
+      </div>
     </div>
 
 
-    <div class="tool-card searchable">
+    <!-- Script -->
+    <div class="card searchable">
       <h3>📝 Video Script Generator</h3>
-      <p>Create a simple video script.</p>
+      <p>Create a simple video script structure.</p>
 
-      <input
-        type="text"
-        id="scriptTopic"
-        placeholder="Enter your video topic"
-      >
+      <input id="scriptTopic"
+        placeholder="Enter your topic">
 
-      <button onclick="generateScript()">Generate Script</button>
+      <button class="btn" onclick="generateScript()">
+        Generate Script
+      </button>
 
-      <div class="result-box" id="scriptResults"></div>
+      <div class="result" id="scriptResult">
+        Your script will appear here.
+      </div>
     </div>
 
 
-    <div class="tool-card searchable">
+    <!-- Description -->
+    <div class="card searchable">
       <h3>📺 YouTube Description Generator</h3>
-      <p>Create a ready-to-edit YouTube description.</p>
+      <p>Generate a basic video description.</p>
 
-      <input
-        type="text"
-        id="descriptionTopic"
-        placeholder="Enter your video topic"
-      >
+      <input id="descriptionTopic"
+        placeholder="Enter your video topic">
 
-      <button onclick="generateDescription()">Generate</button>
+      <button class="btn" onclick="generateDescription()">
+        Generate Description
+      </button>
 
-      <div class="result-box" id="descriptionResults"></div>
+      <div class="result" id="descriptionResult">
+        Your description will appear here.
+      </div>
     </div>
 
 
-    <div class="tool-card searchable">
+    <!-- Caption -->
+    <div class="card searchable">
       <h3>📱 Social Media Caption Generator</h3>
-      <p>Generate captions for social media posts.</p>
+      <p>Create captions for social media posts.</p>
 
-      <input
-        type="text"
-        id="captionTopic"
-        placeholder="Enter your topic"
-      >
+      <input id="captionTopic"
+        placeholder="What is your post about?">
 
-      <button onclick="generateCaption()">Generate Caption</button>
+      <button class="btn" onclick="generateCaption()">
+        Generate Caption
+      </button>
 
-      <div class="result-box" id="captionResults"></div>
+      <div class="result" id="captionResult">
+        Your caption will appear here.
+      </div>
     </div>
 
   </div>
 </section>
 
 
-<section class="container">
+<!-- AI DIRECTORY -->
+<section id="ai" class="ai-section">
+<div class="container">
+
   <div class="section-title">
     <h2>🤖 AI Tools Directory</h2>
-    <p>Discover useful AI tools for work, school, business and creativity.</p>
+    <p>
+      Discover popular AI tools for writing, images, video, coding,
+      education, marketing, business and more.
+    </p>
   </div>
 
-  <div class="tools-grid">
 
-    <div class="tool-card searchable">
-      <h3>🤖 AI Writing Tools</h3>
-      <p>Discover AI tools for writing, rewriting and content creation.</p>
-      <button onclick="showComingSoon()">Explore</button>
-    </div>
+  <div class="ai-controls">
 
-    <div class="tool-card searchable">
-      <h3>🎨 AI Image Tools</h3>
-      <p>Discover AI tools for image generation and editing.</p>
-      <button onclick="showComingSoon()">Explore</button>
-    </div>
+    <input
+      id="aiSearch"
+      class="ai-search"
+      placeholder="Search AI tools..."
+      oninput="filterAITools()">
 
-    <div class="tool-card searchable">
-      <h3>🎬 AI Video Tools</h3>
-      <p>Discover AI tools for video creation and editing.</p>
-      <button onclick="showComingSoon()">Explore</button>
-    </div>
+    <div class="filters">
 
-  </div>
-</section>
+      <button class="filter-btn active"
+        onclick="filterCategory('All',this)">
+        All
+      </button>
 
+      <button class="filter-btn"
+        onclick="filterCategory('Writing',this)">
+        ✍️ Writing
+      </button>
 
-<section class="container" id="invoiceSection">
+      <button class="filter-btn"
+        onclick="filterCategory('Image',this)">
+        🎨 Image
+      </button>
 
-  <div class="full-tool">
+      <button class="filter-btn"
+        onclick="filterCategory('Video',this)">
+        🎬 Video
+      </button>
 
-    <div class="section-title">
-      <h2>🧾 Invoice Generator</h2>
-      <p>Create your invoice below.</p>
-    </div>
+      <button class="filter-btn"
+        onclick="filterCategory('Coding',this)">
+        💻 Coding
+      </button>
 
-    <div class="form-grid">
+      <button class="filter-btn"
+        onclick="filterCategory('Education',this)">
+        📚 Education
+      </button>
 
-      <div>
-        <label>Your Business Name</label>
-        <input type="text" id="businessName" placeholder="David Tech">
-      </div>
+      <button class="filter-btn"
+        onclick="filterCategory('Marketing',this)">
+        📈 Marketing
+      </button>
 
-      <div>
-        <label>Customer Name</label>
-        <input type="text" id="customerName" placeholder="John">
-      </div>
+      <button class="filter-btn"
+        onclick="filterCategory('Business',this)">
+        💼 Business
+      </button>
 
-      <div>
-        <label>Invoice Number</label>
-        <input type="text" id="invoiceNumber" placeholder="INV-001">
-      </div>
-
-      <div>
-        <label>Invoice Date</label>
-        <input type="date" id="invoiceDate">
-      </div>
-
-      <div>
-        <label>Business Email</label>
-        <input type="email" id="businessEmail" placeholder="you@example.com">
-      </div>
-
-      <div>
-        <label>Tax (%)</label>
-        <input type="number" id="taxRate" value="0">
-      </div>
-
-    </div>
-
-    <div class="invoice-items">
-
-      <h3>Items / Services</h3>
-
-      <div class="invoice-row">
-        <input type="text" id="item1" placeholder="Item or service">
-        <input type="number" id="qty1" placeholder="Qty" value="1">
-        <input type="number" id="price1" placeholder="Price">
-      </div>
-
-      <div class="invoice-row">
-        <input type="text" id="item2" placeholder="Item or service">
-        <input type="number" id="qty2" placeholder="Qty" value="1">
-        <input type="number" id="price2" placeholder="Price">
-      </div>
-
-      <div class="invoice-row">
-        <input type="text" id="item3" placeholder="Item or service">
-        <input type="number" id="qty3" placeholder="Qty" value="1">
-        <input type="number" id="price3" placeholder="Price">
-      </div>
-
-    </div>
-
-    <br>
-
-    <button onclick="generateInvoice()">Generate Invoice</button>
-
-    <div id="invoicePreview" class="invoice-preview hidden">
-
-      <h2 id="previewBusiness">Your Business</h2>
-
-      <p>
-        <strong>Invoice:</strong>
-        <span id="previewInvoice"></span>
-      </p>
-
-      <p>
-        <strong>Date:</strong>
-        <span id="previewDate"></span>
-      </p>
-
-      <p>
-        <strong>Customer:</strong>
-        <span id="previewCustomer"></span>
-      </p>
-
-      <p>
-        <strong>Email:</strong>
-        <span id="previewEmail"></span>
-      </p>
-
-      <table>
-
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-
-        <tbody id="invoiceTable"></tbody>
-
-      </table>
-
-      <div class="invoice-total">
-
-        <p>Subtotal: <strong id="previewSubtotal"></strong></p>
-
-        <p>Tax: <strong id="previewTax"></strong></p>
-
-        <h2>Total: <span id="previewTotal"></span></h2>
-
-      </div>
-
-      <br>
-
-      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <button class="filter-btn"
+        onclick="filterCategory('Audio',this)">
+        🎵 Audio
+      </button>
 
     </div>
 
   </div>
-</section>
 
-</main>
 
+  <div id="aiGrid" class="tools-grid">
 
-<footer>
 
-  <h3>ToolNest</h3>
+    <!-- ChatGPT -->
+    <div class="card ai-card featured"
+      data-category="Writing Business Education"
+      data-name="ChatGPT">
 
-  <p>
-    Free online tools for everyone.
-  </p>
+      <span class="featured-label">Featured</span>
 
-  <p>
-    © 2026 ToolNest. All rights reserved.
-  </p>
+      <div class="ai-icon">🤖</div>
 
-</footer>
+      <span class="badge freemium">Freemium</span>
 
+      <div class="category">
+        Writing • Business • Education
+      </div>
 
-<script>
+      <h3>ChatGPT</h3>
 
-/* SEARCH */
+      <p>
+        AI assistant for writing, brainstorming, learning,
+        coding and many other tasks.
+      </p>
 
-function searchTools() {
+      <a class="ai-link"
+        href="https://chatgpt.com/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-  const search = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
+    </div>
 
-  const cards = document.querySelectorAll(".searchable");
 
-  cards.forEach(card => {
+    <!-- Claude -->
+    <div class="card ai-card"
+      data-category="Writing Coding Business"
+      data-name="Claude">
 
-    const text = card.innerText.toLowerCase();
+      <div class="ai-icon">🧠</div>
 
-    if (text.includes(search)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+      <span class="badge freemium">Freemium</span>
 
-  });
-}
+      <div class="category">
+        Writing • Coding • Business
+      </div>
 
+      <h3>Claude</h3>
 
-/* PERCENTAGE */
+      <p>
+        AI assistant for writing, analysis, coding and
+        working with information.
+      </p>
 
-function calculatePercentage() {
+      <a class="ai-link"
+        href="https://claude.ai/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-  const number =
-    parseFloat(document.getElementById("percentNumber").value);
+    </div>
 
-  const percent =
-    parseFloat(document.getElementById("percentValue").value);
 
-  const result =
-    document.getElementById("percentageResult");
+    <!-- Gemini -->
+    <div class="card ai-card"
+      data-category="Writing Education Business"
+      data-name="Google Gemini">
 
-  if (isNaN(number) || isNaN(percent)) {
-    result.innerHTML = "Please enter both numbers.";
-    return;
-  }
+      <div class="ai-icon">✨</div>
 
-  const answer = number * percent / 100;
+      <span class="badge freemium">Freemium</span>
 
-  result.innerHTML =
-    `${percent}% of ${number} = <strong>${answer.toFixed(2)}</strong>`;
-}
+      <div class="category">
+        Writing • Education • Business
+      </div>
 
+      <h3>Google Gemini</h3>
 
-/* AGE */
+      <p>
+        Google's AI assistant for research, writing,
+        brainstorming and productivity.
+      </p>
 
-function calculateAge() {
+      <a class="ai-link"
+        href="https://gemini.google.com/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-  const birth =
-    document.getElementById("birthDate").value;
+    </div>
 
-  const result =
-    document.getElementById("ageResult");
 
-  if (!birth) {
-    result.innerHTML = "Please select your birth date.";
-    return;
-  }
+    <!-- Canva -->
+    <div class="card ai-card"
+      data-category="Image Marketing Business"
+      data-name="Canva AI">
 
-  const birthDate = new Date(birth);
-  const today = new Date();
+      <div class="ai-icon">🎨</div>
 
-  let age =
-    today.getFullYear() - birthDate.getFullYear();
+      <span class="badge freemium">Freemium</span>
 
-  const month =
-    today.getMonth() - birthDate.getMonth();
+      <div class="category">
+        Image • Marketing • Business
+      </div>
 
-  if (
-    month < 0 ||
-    (month === 0 &&
-     today.getDate() < birthDate.getDate())
-  ) {
-    age--;
-  }
+      <h3>Canva AI</h3>
 
-  result.innerHTML =
-    `Your age is <strong>${age} years</strong>.`;
-}
+      <p>
+        AI-powered design features for creating graphics,
+        presentations and social content.
+      </p>
 
+      <a class="ai-link"
+        href="https://www.canva.com/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-/* DISCOUNT */
+    </div>
 
-function calculateDiscount() {
 
-  const price =
-    parseFloat(document.getElementById("originalPrice").value);
+    <!-- Adobe Firefly -->
+    <div class="card ai-card"
+      data-category="Image"
+      data-name="Adobe Firefly">
 
-  const discount =
-    parseFloat(document.getElementById("discountPercent").value);
+      <div class="ai-icon">🖼️</div>
 
-  const result =
-    document.getElementById("discountResult");
+      <span class="badge freemium">Freemium</span>
 
-  if (isNaN(price) || isNaN(discount)) {
-    result.innerHTML = "Please enter both values.";
-    return;
-  }
+      <div class="category">
+        Image
+      </div>
 
-  const saved = price * discount / 100;
-  const finalPrice = price - saved;
+      <h3>Adobe Firefly</h3>
 
-  result.innerHTML =
-    `You save: <strong>${saved.toFixed(2)}</strong><br>
-     Final price: <strong>${finalPrice.toFixed(2)}</strong>`;
-}
+      <p>
+        AI creative tools for generating and editing
+        images and other creative content.
+      </p>
 
+      <a class="ai-link"
+        href="https://firefly.adobe.com/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-/* WORD COUNTER */
+    </div>
 
-function countWords() {
 
-  const text =
-    document.getElementById("counterText").value;
+    <!-- Runway -->
+    <div class="card ai-card"
+      data-category="Video"
+      data-name="Runway">
 
-  const words =
-    text.trim() === ""
-    ? 0
-    : text.trim().split(/\s+/).length;
+      <div class="ai-icon">🎬</div>
 
-  const characters =
-    text.length;
+      <span class="badge freemium">Freemium</span>
 
-  document.getElementById("counterResult").innerHTML =
-    `Words: <strong>${words}</strong><br>
-     Characters: <strong>${characters}</strong>`;
-}
+      <div class="category">
+        Video
+      </div>
 
+      <h3>Runway</h3>
 
-/* PROFIT CALCULATOR */
+      <p>
+        AI creative platform for generating and editing
+        video content.
+      </p>
 
-function calculateProfit() {
+      <a class="ai-link"
+        href="https://runwayml.com/"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-  const cost =
-    parseFloat(document.getElementById("costPrice").value);
+    </div>
 
-  const selling =
-    parseFloat(document.getElementById("sellingPrice").value);
 
-  const result =
-    document.getElementById("profitResult");
+    <!-- GitHub Copilot -->
+    <div class="card ai-card"
+      data-category="Coding"
+      data-name="GitHub Copilot">
 
-  if (isNaN(cost) || isNaN(selling)) {
-    result.innerHTML = "Please enter both prices.";
-    return;
-  }
+      <div class="ai-icon">💻</div>
 
-  const profit = selling - cost;
+      <span class="badge paid">Paid</span>
 
-  const margin =
-    selling === 0
-    ? 0
-    : (profit / selling) * 100;
+      <div class="category">
+        Coding
+      </div>
 
-  result.innerHTML =
-    `Profit: <strong>${profit.toFixed(2)}</strong><br>
-     Profit Margin: <strong>${margin.toFixed(2)}%</strong>`;
-}
+      <h3>GitHub Copilot</h3>
 
+      <p>
+        AI coding assistance for developers working
+        inside supported development environments.
+      </p>
 
-/* BUSINESS NAME GENERATOR */
+      <a class="ai-link"
+        href="https://github.com/features/copilot"
+        target="_blank"
+        rel="noopener">
+        Visit Tool →
+      </a>
 
-function generateBusinessNames() {
+    </div>
 
-  const keyword =
-    document.getElementById("businessKeyword").value.trim();
 
-  const result =
-    document.getElementById("businessNames");
+    <!-- Perplexity -->
+    <div class="card ai-card"
+      data-category="Education Writing Business"
+      data-name="Perplexity">
 
-  if (!keyword) {
-    result.innerHTML = "Enter a keyword first.";
-    return;
-  }
-
-  const names = [
-    `${keyword} Hub`,
-    `${keyword} Labs`,
-    `${keyword} Pro`,
-    `${keyword} Solutions`,
-    `${keyword} World`,
-    `${keyword} Works`,
-    `${keyword} Digital`,
-    `${keyword} Plus`
-  ];
-
-  result.innerHTML =
-    "<ul>" +
-    names.map(name => `<li>${name}</li>`).join("") +
-    "</ul>";
-}
-
-
-/* YOUTUBE TITLES */
-
-function generateTitles() {
-
-  const topic =
-    document.getElementById("titleTopic").value.trim();
-
-  const result =
-    document.getElementById("titleResults");
-
-  if (!topic) {
-    result.innerHTML = "Enter a topic first.";
-    return;
-  }
-
-  const titles = [
-    `The Ultimate Guide to ${topic}`,
-    `10 Things You Need to Know About ${topic}`,
-    `I Tried ${topic} — Here's What Happened`,
-    `How to Master ${topic}`,
-    `The Truth About ${topic}`,
-    `${topic}: Everything Beginners Need to Know`,
-    `Stop Making These ${topic} Mistakes!`,
-    `The Best Way to Get Started With ${topic}`
-  ];
-
-  result.innerHTML =
-    "<ol>" +
-    titles.map(title => `<li>${title}</li>`).join("") +
-    "</ol>";
-}
-
-
-/* VIDEO IDEAS */
-
-function generateVideoIdeas() {
-
-  const topic =
-    document.getElementById("ideaTopic").value.trim();
-
-  const result =
-    document.getElementById("ideaResults");
-
-  if (!topic) {
-    result.innerHTML = "Enter a topic first.";
-    return;
-  }
-
-  const ideas = [
-    `Beginner's guide to ${topic}`,
-    `10 mistakes people make with ${topic}`,
-    `5 secrets about ${topic}`,
-    `Step-by-step tutorial about ${topic}`,
-    `Things I wish I knew before learning ${topic}`,
-    `The future of ${topic}`,
-    `${topic} myths you should stop believing`,
-    `Best tools for ${topic}`
-  ];
-
-  result.innerHTML =
-    "<ul>" +
-    ideas.map(idea => `<li>${idea}</li>`).join("") +
-    "</ul>";
-}
-
-
-/* VIDEO SCRIPT */
-
-function generateScript() {
-
-  const topic =
-    document.getElementById("scriptTopic").value.trim();
-
-  const result =
-    document.getElementById("scriptResults");
-
-  if (!topic) {
-    result.innerHTML = "Enter a topic first.";
-    return;
-  }
-
-  const script = `
-HOOK:
-"Have you ever wondered how ${topic} really works?"
-
-INTRO:
-"Welcome back! Today we're talking about ${topic}.
-If you're interested in this topic, watch until the end."
-
-MAIN CONTENT:
-1. Explain what ${topic} means.
-2. Explain why it is important.
-3. Give practical examples.
-4. Share useful tips.
-5. Explain common mistakes.
-
-CONCLUSION:
-"Now you understand the basics of ${topic}.
-Tr
+      <div class="ai-icon">?
