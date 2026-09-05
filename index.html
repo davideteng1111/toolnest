@@ -5,197 +5,293 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ToolNest - Free Online Tools</title>
-<meta name="description" content="Free online tools for business, creators, students and everyone.">
+
+<meta name="description" content="ToolNest provides free online calculators, writing tools, business tools, creator tools and AI tools.">
+<meta name="keywords" content="free online tools, calculators, invoice generator, AI tools, video tools, writing tools">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fb;
-color:#172033;
-line-height:1.6
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header{
-background:white;
-border-bottom:1px solid #e5e7eb;
-padding:18px 20px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  line-height: 1.6;
 }
 
-.nav{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center
+header {
+  background: #111827;
+  color: white;
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo{
-font-size:25px;
-font-weight:bold
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo span{color:#2563eb}
-
-.hero{
-text-align:center;
-padding:60px 20px;
-background:white
+.logo {
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.hero h1{
-font-size:42px;
-margin-bottom:15px
+.logo span {
+  color: #60a5fa;
 }
 
-.hero p{
-color:#64748b;
-font-size:18px;
-max-width:650px;
-margin:auto
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
 }
 
-.search{
-max-width:600px;
-margin:28px auto 0
+.hero {
+  background: linear-gradient(135deg, #111827, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
 }
 
-.search input{
-width:100%;
-padding:16px 20px;
-border:1px solid #d1d5db;
-border-radius:12px;
-font-size:16px
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:45px 20px
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  opacity: .9;
 }
 
-.section-title{
-font-size:28px;
-margin-bottom:25px
+.search-box {
+  max-width: 650px;
+  margin: 30px auto 0;
+  display: flex;
 }
 
-.tools{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px
+.search-box input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
 }
 
-.tool-card{
-background:white;
-padding:25px;
-border-radius:15px;
-border:1px solid #e5e7eb
+.search-box button {
+  border-radius: 0 8px 8px 0;
 }
 
-.tool-icon{
-font-size:32px;
-margin-bottom:10px
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-.tool-card h3{
-margin-bottom:8px
+button:hover {
+  opacity: .9;
 }
 
-.tool-card p{
-color:#64748b;
-font-size:14px;
-margin-bottom:18px
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 20px;
 }
 
-button{
-border:none;
-background:#2563eb;
-color:white;
-padding:11px 18px;
-border-radius:8px;
-cursor:pointer
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-button:hover{background:#1d4ed8}
-
-.invoice{
-background:white;
-margin-top:45px;
-padding:30px;
-border-radius:15px;
-border:1px solid #e5e7eb
+.section-title h2 {
+  font-size: 30px;
 }
 
-.invoice h2{
-margin-bottom:20px
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px
+.tool-card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.07);
 }
 
-input,select{
-width:100%;
-padding:13px;
-border:1px solid #d1d5db;
-border-radius:8px;
-font-size:15px;
-margin-bottom:12px
+.tool-card h3 {
+  margin-bottom: 8px;
 }
 
-.full{
-grid-column:1/-1
+.tool-card p {
+  color: #667085;
+  margin-bottom: 15px;
 }
 
-.item-row{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:10px;
-margin-bottom:10px
+.tool-card input,
+.tool-card select,
+.tool-card textarea {
+  width: 100%;
+  padding: 11px;
+  margin: 6px 0;
+  border: 1px solid #d0d5dd;
+  border-radius: 7px;
+  font-size: 15px;
 }
 
-.invoice-total{
-margin-top:20px;
-padding:20px;
-background:#f5f7fb;
-border-radius:10px;
-font-size:20px;
-font-weight:bold
+.result-box {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  overflow-wrap: anywhere;
 }
 
-.invoice-preview{
-margin-top:30px;
-padding:25px;
-border:2px solid #172033;
-background:white
+.result-box h4 {
+  margin-top: 15px;
+  margin-bottom: 6px;
 }
 
-.invoice-preview h2{
-font-size:30px
+.result-box ul {
+  padding-left: 20px;
 }
 
-.preview-line{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid #ddd;
-padding:8px 0
+pre {
+  white-space: pre-wrap;
+  font-family: Arial, sans-serif;
 }
 
-footer{
-text-align:center;
-padding:30px;
-background:#172033;
-color:white;
-margin-top:40px
+.full-tool {
+  margin-top: 45px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.07);
 }
 
-@media(max-width:600px){
-.hero h1{font-size:32px}
-.form-grid{grid-template-columns:1fr}
-.item-row{grid-template-columns:1fr}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.invoice-items {
+  margin-top: 20px;
+}
+
+.invoice-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.invoice-preview {
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  padding: 25px;
+  background: white;
+}
+
+.invoice-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoice-preview th,
+.invoice-preview td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.invoice-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media(max-width: 650px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-row {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    display: block;
+  }
+
+  .search-box input {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .search-box button {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #invoicePreview,
+  #invoicePreview * {
+    visibility: visible;
+  }
+
+  #invoicePreview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  button {
+    display: none;
+  }
 }
 </style>
 </head>
@@ -203,252 +299,716 @@ margin-top:40px
 <body>
 
 <header>
-<div class="nav">
-<div class="logo">Tool<span>Nest</span></div>
-</div>
+  <div class="nav">
+    <div class="logo">Tool<span>Nest</span></div>
+
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#business">Business</a>
+      <a href="#creator">Creator</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-<h1>Free Tools That Get Things Done</h1>
+  <h1>Free Tools. One Simple Place.</h1>
 
-<p>
-Simple, fast and useful online tools for business,
-creators, students and everyone.
-</p>
+  <p>
+    Useful calculators, writing tools, business tools,
+    creator tools and more — completely free.
+  </p>
 
-<div class="search">
-<input id="searchInput"
-placeholder="Search for a tool..."
-onkeyup="searchTools()">
-</div>
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search for a tool..."
+      onkeyup="searchTools()"
+    >
+    <button onclick="searchTools()">Search</button>
+  </div>
 </section>
 
-<main class="container">
+<main>
 
-<h2 class="section-title">Popular Tools</h2>
+<section class="container" id="tools">
 
-<div class="tools">
+  <div class="section-title">
+    <h2>Popular Tools</h2>
+    <p>Simple tools you can use instantly.</p>
+  </div>
 
-<div class="tool-card">
-<div class="tool-icon">🧮</div>
-<h3>Percentage Calculator</h3>
-<p>Calculate percentages quickly.</p>
-<button onclick="showPercentage()">Open Tool</button>
-</div>
+  <div class="tools-grid" id="toolsGrid">
 
-<div class="tool-card">
-<div class="tool-icon">🎂</div>
-<h3>Age Calculator</h3>
-<p>Calculate your exact age.</p>
-<button>Coming Soon</button>
-</div>
+    <div class="tool-card searchable">
+      <h3>🧮 Percentage Calculator</h3>
+      <p>Calculate percentages quickly.</p>
 
-<div class="tool-card">
-<div class="tool-icon">💰</div>
-<h3>Discount Calculator</h3>
-<p>Calculate discounted prices.</p>
-<button>Coming Soon</button>
-</div>
+      <input type="number" id="percentNumber" placeholder="Enter number">
+      <input type="number" id="percentValue" placeholder="Enter percentage">
 
-<div class="tool-card">
-<div class="tool-icon">📝</div>
-<h3>Word Counter</h3>
-<p>Count words and characters.</p>
-<button>Coming Soon</button>
-</div>
+      <button onclick="calculatePercentage()">Calculate</button>
 
-<div class="tool-card">
-<div class="tool-icon">💼</div>
-<h3>Invoice Generator</h3>
-<p>Create professional invoices for your business.</p>
-<button onclick="openInvoice()">Create Invoice</button>
-</div>
+      <div class="result-box" id="percentageResult"></div>
+    </div>
 
-<div class="tool-card">
-<div class="tool-icon">🎬</div>
-<h3>Video Tools</h3>
-<p>Create scripts, titles and ideas for videos.</p>
-<button>Coming Soon</button>
-</div>
+    <div class="tool-card searchable">
+      <h3>🎂 Age Calculator</h3>
+      <p>Calculate someone's age.</p>
 
-</div>
+      <input type="date" id="birthDate">
 
-<div class="invoice" id="invoice">
+      <button onclick="calculateAge()">Calculate Age</button>
 
-<h2>🧾 Invoice Generator</h2>
+      <div class="result-box" id="ageResult"></div>
+    </div>
 
-<div class="form-grid">
+    <div class="tool-card searchable">
+      <h3>🏷️ Discount Calculator</h3>
+      <p>Find the final price after a discount.</p>
 
-<div>
-<input id="businessName" placeholder="Your Business Name">
-</div>
+      <input type="number" id="originalPrice" placeholder="Original price">
+      <input type="number" id="discountPercent" placeholder="Discount %">
 
-<div>
-<input id="customerName" placeholder="Customer Name">
-</div>
+      <button onclick="calculateDiscount()">Calculate</button>
 
-<div>
-<input id="invoiceNumber" placeholder="Invoice Number">
-</div>
+      <div class="result-box" id="discountResult"></div>
+    </div>
 
-<div>
-<input id="invoiceDate" type="date">
-</div>
+    <div class="tool-card searchable">
+      <h3>📝 Word & Character Counter</h3>
+      <p>Count words and characters.</p>
 
-<div class="full">
-<input id="businessEmail" placeholder="Business Email">
-</div>
+      <textarea
+        id="counterText"
+        rows="5"
+        placeholder="Type or paste your text..."
+        oninput="countWords()"
+      ></textarea>
 
-</div>
+      <div class="result-box" id="counterResult">
+        Words: 0<br>
+        Characters: 0
+      </div>
+    </div>
 
-<h3>Items</h3>
+  </div>
+</section>
 
-<div class="item-row">
-<input id="item1" placeholder="Item / Service">
-<input id="qty1" type="number" placeholder="Qty" value="1">
-<input id="price1" type="number" placeholder="Price" value="0">
-</div>
 
-<div class="item-row">
-<input id="item2" placeholder="Item / Service">
-<input id="qty2" type="number" placeholder="Qty" value="1">
-<input id="price2" type="number" placeholder="Price" value="0">
-</div>
+<section class="container" id="business">
 
-<div class="item-row">
-<input id="item3" placeholder="Item / Service">
-<input id="qty3" type="number" placeholder="Qty" value="1">
-<input id="price3" type="number" placeholder="Price" value="0">
-</div>
+  <div class="section-title">
+    <h2>💼 Business Tools</h2>
+    <p>Useful tools for freelancers, entrepreneurs and businesses.</p>
+  </div>
 
-<label>Tax (%)</label>
-<input id="tax" type="number" value="0">
+  <div class="tools-grid">
 
-<br>
+    <div class="tool-card searchable">
+      <h3>🧾 Invoice Generator</h3>
+      <p>Create a professional invoice and print or save it as PDF.</p>
 
-<button onclick="generateInvoice()">Generate Invoice</button>
+      <button onclick="showInvoice()">Create Invoice</button>
+    </div>
 
-<div class="invoice-total">
-Total: <span id="total">0.00</span>
-</div>
+    <div class="tool-card searchable">
+      <h3>🧮 Profit Margin Calculator</h3>
+      <p>Calculate your profit margin.</p>
 
-<div class="invoice-preview" id="preview">
+      <input type="number" id="costPrice" placeholder="Cost price">
+      <input type="number" id="sellingPrice" placeholder="Selling price">
 
-<h2>Invoice</h2>
+      <button onclick="calculateProfit()">Calculate</button>
 
-<p id="previewBusiness">Your Business</p>
-<p id="previewCustomer">Customer</p>
+      <div class="result-box" id="profitResult"></div>
+    </div>
 
-<hr><br>
+    <div class="tool-card searchable">
+      <h3>💡 Business Name Generator</h3>
+      <p>Generate business name ideas.</p>
 
-<div id="previewItems"></div>
+      <input
+        type="text"
+        id="businessKeyword"
+        placeholder="Example: Technology"
+      >
 
-<br>
+      <button onclick="generateBusinessNames()">Generate</button>
 
-<div class="preview-line">
-<strong>Total</strong>
-<strong id="previewTotal">0.00</strong>
-</div>
+      <div class="result-box" id="businessNames"></div>
+    </div>
 
-<br>
+  </div>
+</section>
 
-<button onclick="window.print()">Print / Save PDF</button>
 
-</div>
+<section class="container" id="creator">
 
-</div>
+  <div class="section-title">
+    <h2>🎬 Creator & Video Tools</h2>
+    <p>Create ideas and content for YouTube, TikTok, Instagram and more.</p>
+  </div>
+
+  <div class="tools-grid">
+
+    <div class="tool-card searchable">
+      <h3>🎯 YouTube Title Generator</h3>
+      <p>Generate clickable video title ideas.</p>
+
+      <input
+        type="text"
+        id="titleTopic"
+        placeholder="Enter your video topic"
+      >
+
+      <button onclick="generateTitles()">Generate Titles</button>
+
+      <div class="result-box" id="titleResults"></div>
+    </div>
+
+
+    <div class="tool-card searchable">
+      <h3>💡 Video Ideas Generator</h3>
+      <p>Generate content ideas for your next videos.</p>
+
+      <input
+        type="text"
+        id="ideaTopic"
+        placeholder="Enter your topic"
+      >
+
+      <button onclick="generateVideoIdeas()">Generate Ideas</button>
+
+      <div class="result-box" id="ideaResults"></div>
+    </div>
+
+
+    <div class="tool-card searchable">
+      <h3>📝 Video Script Generator</h3>
+      <p>Create a simple video script.</p>
+
+      <input
+        type="text"
+        id="scriptTopic"
+        placeholder="Enter your video topic"
+      >
+
+      <button onclick="generateScript()">Generate Script</button>
+
+      <div class="result-box" id="scriptResults"></div>
+    </div>
+
+
+    <div class="tool-card searchable">
+      <h3>📺 YouTube Description Generator</h3>
+      <p>Create a ready-to-edit YouTube description.</p>
+
+      <input
+        type="text"
+        id="descriptionTopic"
+        placeholder="Enter your video topic"
+      >
+
+      <button onclick="generateDescription()">Generate</button>
+
+      <div class="result-box" id="descriptionResults"></div>
+    </div>
+
+
+    <div class="tool-card searchable">
+      <h3>📱 Social Media Caption Generator</h3>
+      <p>Generate captions for social media posts.</p>
+
+      <input
+        type="text"
+        id="captionTopic"
+        placeholder="Enter your topic"
+      >
+
+      <button onclick="generateCaption()">Generate Caption</button>
+
+      <div class="result-box" id="captionResults"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="container">
+  <div class="section-title">
+    <h2>🤖 AI Tools Directory</h2>
+    <p>Discover useful AI tools for work, school, business and creativity.</p>
+  </div>
+
+  <div class="tools-grid">
+
+    <div class="tool-card searchable">
+      <h3>🤖 AI Writing Tools</h3>
+      <p>Discover AI tools for writing, rewriting and content creation.</p>
+      <button onclick="showComingSoon()">Explore</button>
+    </div>
+
+    <div class="tool-card searchable">
+      <h3>🎨 AI Image Tools</h3>
+      <p>Discover AI tools for image generation and editing.</p>
+      <button onclick="showComingSoon()">Explore</button>
+    </div>
+
+    <div class="tool-card searchable">
+      <h3>🎬 AI Video Tools</h3>
+      <p>Discover AI tools for video creation and editing.</p>
+      <button onclick="showComingSoon()">Explore</button>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="container" id="invoiceSection">
+
+  <div class="full-tool">
+
+    <div class="section-title">
+      <h2>🧾 Invoice Generator</h2>
+      <p>Create your invoice below.</p>
+    </div>
+
+    <div class="form-grid">
+
+      <div>
+        <label>Your Business Name</label>
+        <input type="text" id="businessName" placeholder="David Tech">
+      </div>
+
+      <div>
+        <label>Customer Name</label>
+        <input type="text" id="customerName" placeholder="John">
+      </div>
+
+      <div>
+        <label>Invoice Number</label>
+        <input type="text" id="invoiceNumber" placeholder="INV-001">
+      </div>
+
+      <div>
+        <label>Invoice Date</label>
+        <input type="date" id="invoiceDate">
+      </div>
+
+      <div>
+        <label>Business Email</label>
+        <input type="email" id="businessEmail" placeholder="you@example.com">
+      </div>
+
+      <div>
+        <label>Tax (%)</label>
+        <input type="number" id="taxRate" value="0">
+      </div>
+
+    </div>
+
+    <div class="invoice-items">
+
+      <h3>Items / Services</h3>
+
+      <div class="invoice-row">
+        <input type="text" id="item1" placeholder="Item or service">
+        <input type="number" id="qty1" placeholder="Qty" value="1">
+        <input type="number" id="price1" placeholder="Price">
+      </div>
+
+      <div class="invoice-row">
+        <input type="text" id="item2" placeholder="Item or service">
+        <input type="number" id="qty2" placeholder="Qty" value="1">
+        <input type="number" id="price2" placeholder="Price">
+      </div>
+
+      <div class="invoice-row">
+        <input type="text" id="item3" placeholder="Item or service">
+        <input type="number" id="qty3" placeholder="Qty" value="1">
+        <input type="number" id="price3" placeholder="Price">
+      </div>
+
+    </div>
+
+    <br>
+
+    <button onclick="generateInvoice()">Generate Invoice</button>
+
+    <div id="invoicePreview" class="invoice-preview hidden">
+
+      <h2 id="previewBusiness">Your Business</h2>
+
+      <p>
+        <strong>Invoice:</strong>
+        <span id="previewInvoice"></span>
+      </p>
+
+      <p>
+        <strong>Date:</strong>
+        <span id="previewDate"></span>
+      </p>
+
+      <p>
+        <strong>Customer:</strong>
+        <span id="previewCustomer"></span>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <span id="previewEmail"></span>
+      </p>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody id="invoiceTable"></tbody>
+
+      </table>
+
+      <div class="invoice-total">
+
+        <p>Subtotal: <strong id="previewSubtotal"></strong></p>
+
+        <p>Tax: <strong id="previewTax"></strong></p>
+
+        <h2>Total: <span id="previewTotal"></span></h2>
+
+      </div>
+
+      <br>
+
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+
+    </div>
+
+  </div>
+</section>
 
 </main>
 
+
 <footer>
-<p>© 2026 ToolNest. Free tools for everyone.</p>
+
+  <h3>ToolNest</h3>
+
+  <p>
+    Free online tools for everyone.
+  </p>
+
+  <p>
+    © 2026 ToolNest. All rights reserved.
+  </p>
+
 </footer>
+
 
 <script>
 
-function openInvoice(){
-document.getElementById("invoice").scrollIntoView({
-behavior:"smooth"
-});
+/* SEARCH */
+
+function searchTools() {
+
+  const search = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  const cards = document.querySelectorAll(".searchable");
+
+  cards.forEach(card => {
+
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(search)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
 }
 
-function showPercentage(){
-alert("Percentage Calculator is already available. More calculators are coming soon!");
+
+/* PERCENTAGE */
+
+function calculatePercentage() {
+
+  const number =
+    parseFloat(document.getElementById("percentNumber").value);
+
+  const percent =
+    parseFloat(document.getElementById("percentValue").value);
+
+  const result =
+    document.getElementById("percentageResult");
+
+  if (isNaN(number) || isNaN(percent)) {
+    result.innerHTML = "Please enter both numbers.";
+    return;
+  }
+
+  const answer = number * percent / 100;
+
+  result.innerHTML =
+    `${percent}% of ${number} = <strong>${answer.toFixed(2)}</strong>`;
 }
 
-function searchTools(){
 
-let search=document.getElementById("searchInput")
-.value.toLowerCase();
+/* AGE */
 
-let cards=document.querySelectorAll(".tool-card");
+function calculateAge() {
 
-cards.forEach(function(card){
+  const birth =
+    document.getElementById("birthDate").value;
 
-let text=card.innerText.toLowerCase();
+  const result =
+    document.getElementById("ageResult");
 
-card.style.display=text.includes(search)?"block":"none";
+  if (!birth) {
+    result.innerHTML = "Please select your birth date.";
+    return;
+  }
 
-});
+  const birthDate = new Date(birth);
+  const today = new Date();
 
+  let age =
+    today.getFullYear() - birthDate.getFullYear();
+
+  const month =
+    today.getMonth() - birthDate.getMonth();
+
+  if (
+    month < 0 ||
+    (month === 0 &&
+     today.getDate() < birthDate.getDate())
+  ) {
+    age--;
+  }
+
+  result.innerHTML =
+    `Your age is <strong>${age} years</strong>.`;
 }
 
-function generateInvoice(){
 
-let business=document.getElementById("businessName").value || "Your Business";
-let customer=document.getElementById("customerName").value || "Customer";
+/* DISCOUNT */
 
-let taxRate=parseFloat(document.getElementById("tax").value)||0;
+function calculateDiscount() {
 
-let subtotal=0;
+  const price =
+    parseFloat(document.getElementById("originalPrice").value);
 
-let itemsHTML="";
+  const discount =
+    parseFloat(document.getElementById("discountPercent").value);
 
-for(let i=1;i<=3;i++){
+  const result =
+    document.getElementById("discountResult");
 
-let name=document.getElementById("item"+i).value;
+  if (isNaN(price) || isNaN(discount)) {
+    result.innerHTML = "Please enter both values.";
+    return;
+  }
 
-let qty=parseFloat(document.getElementById("qty"+i).value)||0;
+  const saved = price * discount / 100;
+  const finalPrice = price - saved;
 
-let price=parseFloat(document.getElementById("price"+i).value)||0;
-
-let amount=qty*price;
-
-subtotal+=amount;
-
-if(name && amount>0){
-
-itemsHTML+=`
-<div class="preview-line">
-<span>${name} × ${qty}</span>
-<span>${amount.toFixed(2)}</span>
-</div>
-`;
-
+  result.innerHTML =
+    `You save: <strong>${saved.toFixed(2)}</strong><br>
+     Final price: <strong>${finalPrice.toFixed(2)}</strong>`;
 }
 
+
+/* WORD COUNTER */
+
+function countWords() {
+
+  const text =
+    document.getElementById("counterText").value;
+
+  const words =
+    text.trim() === ""
+    ? 0
+    : text.trim().split(/\s+/).length;
+
+  const characters =
+    text.length;
+
+  document.getElementById("counterResult").innerHTML =
+    `Words: <strong>${words}</strong><br>
+     Characters: <strong>${characters}</strong>`;
 }
 
-let tax=subtotal*(taxRate/100);
 
-let total=subtotal+tax;
+/* PROFIT CALCULATOR */
 
-document.getElementById("previewBusiness").innerText=business;
+function calculateProfit() {
 
-document.getElementById("previewCustomer").innerText=
-"Bill To: "+customer;
+  const cost =
+    parseFloat(document.getElementById("costPrice").value);
 
-document.getElementById("previewItems").innerHTML=itemsHTML;
+  const selling =
+    parseFloat(document.getElementById("sellingPrice").value);
 
-document.getElementById("previewTotal").innerText=
-total.toFixed(2);
+  const result =
+    document.getElementById("profitResult");
 
-document.getElementById("total").innerText=
-total.toFixed(2);
+  if (isNaN(cost) || isNaN(selling)) {
+    result.innerHTML = "Please enter both prices.";
+    return;
+  }
 
+  const profit = selling - cost;
+
+  const margin =
+    selling === 0
+    ? 0
+    : (profit / selling) * 100;
+
+  result.innerHTML =
+    `Profit: <strong>${profit.toFixed(2)}</strong><br>
+     Profit Margin: <strong>${margin.toFixed(2)}%</strong>`;
 }
 
-</script>
 
-</body>
-</html>
+/* BUSINESS NAME GENERATOR */
+
+function generateBusinessNames() {
+
+  const keyword =
+    document.getElementById("businessKeyword").value.trim();
+
+  const result =
+    document.getElementById("businessNames");
+
+  if (!keyword) {
+    result.innerHTML = "Enter a keyword first.";
+    return;
+  }
+
+  const names = [
+    `${keyword} Hub`,
+    `${keyword} Labs`,
+    `${keyword} Pro`,
+    `${keyword} Solutions`,
+    `${keyword} World`,
+    `${keyword} Works`,
+    `${keyword} Digital`,
+    `${keyword} Plus`
+  ];
+
+  result.innerHTML =
+    "<ul>" +
+    names.map(name => `<li>${name}</li>`).join("") +
+    "</ul>";
+}
+
+
+/* YOUTUBE TITLES */
+
+function generateTitles() {
+
+  const topic =
+    document.getElementById("titleTopic").value.trim();
+
+  const result =
+    document.getElementById("titleResults");
+
+  if (!topic) {
+    result.innerHTML = "Enter a topic first.";
+    return;
+  }
+
+  const titles = [
+    `The Ultimate Guide to ${topic}`,
+    `10 Things You Need to Know About ${topic}`,
+    `I Tried ${topic} — Here's What Happened`,
+    `How to Master ${topic}`,
+    `The Truth About ${topic}`,
+    `${topic}: Everything Beginners Need to Know`,
+    `Stop Making These ${topic} Mistakes!`,
+    `The Best Way to Get Started With ${topic}`
+  ];
+
+  result.innerHTML =
+    "<ol>" +
+    titles.map(title => `<li>${title}</li>`).join("") +
+    "</ol>";
+}
+
+
+/* VIDEO IDEAS */
+
+function generateVideoIdeas() {
+
+  const topic =
+    document.getElementById("ideaTopic").value.trim();
+
+  const result =
+    document.getElementById("ideaResults");
+
+  if (!topic) {
+    result.innerHTML = "Enter a topic first.";
+    return;
+  }
+
+  const ideas = [
+    `Beginner's guide to ${topic}`,
+    `10 mistakes people make with ${topic}`,
+    `5 secrets about ${topic}`,
+    `Step-by-step tutorial about ${topic}`,
+    `Things I wish I knew before learning ${topic}`,
+    `The future of ${topic}`,
+    `${topic} myths you should stop believing`,
+    `Best tools for ${topic}`
+  ];
+
+  result.innerHTML =
+    "<ul>" +
+    ideas.map(idea => `<li>${idea}</li>`).join("") +
+    "</ul>";
+}
+
+
+/* VIDEO SCRIPT */
+
+function generateScript() {
+
+  const topic =
+    document.getElementById("scriptTopic").value.trim();
+
+  const result =
+    document.getElementById("scriptResults");
+
+  if (!topic) {
+    result.innerHTML = "Enter a topic first.";
+    return;
+  }
+
+  const script = `
+HOOK:
+"Have you ever wondered how ${topic} really works?"
+
+INTRO:
+"Welcome back! Today we're talking about ${topic}.
+If you're interested in this topic, watch until the end."
+
+MAIN CONTENT:
+1. Explain what ${topic} means.
+2. Explain why it is important.
+3. Give practical examples.
+4. Share useful tips.
+5. Explain common mistakes.
+
+CONCLUSION:
+"Now you understand the basics of ${topic}.
+Tr
