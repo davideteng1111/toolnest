@@ -2726,7 +2726,186 @@ function generateCaption() {
           Visit Tool →
         </a>
       </div>
+<!-- Grammarly -->
+<div class="ai-card"
+     data-ai-category="writing"
+     data-ai-name="grammarly">
 
+  <div class="ai-icon">✍️</div>
+
+  <h3>Grammarly</h3>
+
+  <span class="ai-category">
+    Writing
+  </span>
+
+  <p>
+    AI writing assistance for grammar,
+    clarity, tone and communication.
+  </p>
+
+  <a href="https://www.grammarly.com/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- ElevenLabs -->
+<div class="ai-card"
+     data-ai-category="audio"
+     data-ai-name="elevenlabs">
+
+  <div class="ai-icon">🎙️</div>
+
+  <h3>ElevenLabs</h3>
+
+  <span class="ai-category">
+    AI Audio
+  </span>
+
+  <p>
+    AI-powered voice and audio creation
+    for creators and businesses.
+  </p>
+
+  <a href="https://elevenlabs.io/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- Copy.ai -->
+<div class="ai-card"
+     data-ai-category="writing"
+     data-ai-name="copy ai">
+
+  <div class="ai-icon">📝</div>
+
+  <h3>Copy.ai</h3>
+
+  <span class="ai-category">
+    Writing & Marketing
+  </span>
+
+  <p>
+    AI-powered tools for marketing,
+    sales and content creation.
+  </p>
+
+  <a href="https://www.copy.ai/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- Synthesia -->
+<div class="ai-card"
+     data-ai-category="video"
+     data-ai-name="synthesia">
+
+  <div class="ai-icon">🎥</div>
+
+  <h3>Synthesia</h3>
+
+  <span class="ai-category">
+    AI Video
+  </span>
+
+  <p>
+    Create professional videos with
+    AI avatars and voiceovers.
+  </p>
+
+  <a href="https://www.synthesia.io/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- Notion AI -->
+<div class="ai-card"
+     data-ai-category="productivity"
+     data-ai-name="notion ai">
+
+  <div class="ai-icon">🧠</div>
+
+  <h3>Notion AI</h3>
+
+  <span class="ai-category">
+    Productivity
+  </span>
+
+  <p>
+    AI assistance for writing,
+    organization and productivity.
+  </p>
+
+  <a href="https://www.notion.so/product/ai"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- Leonardo AI -->
+<div class="ai-card"
+     data-ai-category="design"
+     data-ai-name="leonardo ai">
+
+  <div class="ai-icon">🎨</div>
+
+  <h3>Leonardo AI</h3>
+
+  <span class="ai-category">
+    AI Design
+  </span>
+
+  <p>
+    Create images and visual assets
+    using generative AI.
+  </p>
+
+  <a href="https://leonardo.ai/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+</div>
+
+
+<!-- Pika -->
+<div class="ai-card"
+     data-ai-category="video"
+     data-ai-name="pika">
+
+  <div class="ai-icon">🎬</div>
+
+  <h3>Pika</h3>
+
+  <span class="ai-category">
+    AI Video
+  </span>
+
+  <p>
+    AI-powered tools for creating
+    and transforming video content.
+  </p>
+
+  <a href="https://pika.art/"
+     target="_blank"
+     rel="noopener">
+    Visit Tool →
+  </a>
+   </div>
     </div>
 
   </div>
@@ -2902,3 +3081,68 @@ function generateCaption() {
 
 </style> 
    
+<script>
+
+// ===============================
+// AI TOOLS FILTER
+// ===============================
+
+let selectedAICategory = "all";
+
+function filterAICategory(category, button) {
+  selectedAICategory = category;
+
+  document.querySelectorAll(".ai-filters button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  if (button) {
+    button.classList.add("active");
+  }
+
+  filterAITools();
+}
+
+
+// ===============================
+// AI TOOLS SEARCH
+// ===============================
+
+function filterAITools() {
+  const searchInput = document.getElementById("aiSearch");
+
+  if (!searchInput) return;
+
+  const search = searchInput.value.toLowerCase().trim();
+
+  const cards = document.querySelectorAll(".ai-card");
+
+  cards.forEach(card => {
+    const name =
+      (card.dataset.aiName || "").toLowerCase();
+
+    const category =
+      (card.dataset.aiCategory || "").toLowerCase();
+
+    const text =
+      card.textContent.toLowerCase();
+
+    const matchesSearch =
+      !search ||
+      name.includes(search) ||
+      category.includes(search) ||
+      text.includes(search);
+
+    const matchesCategory =
+      selectedAICategory === "all" ||
+      category === selectedAICategory;
+
+    if (matchesSearch && matchesCategory) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+</script>
