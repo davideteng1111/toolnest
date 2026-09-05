@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ToolNest Creator Studio</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.5;
+}
+
+.header{
+  background:#111827;
+  color:white;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#60a5fa;
+}
+
+.back{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  padding:9px 14px;
+  border:1px solid #374151;
+  border-radius:8px;
+}
+
+.hero{
+  max-width:1100px;
+  margin:35px auto 20px;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#667085;
+  max-width:700px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px 50px;
+}
+
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.card h2{
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+.card p{
+  color:#667085;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  margin:12px 0 6px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  font-size:14px;
+  outline:none;
+  background:white;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#2563eb;
+}
+
+button{
+  width:100%;
+  margin-top:14px;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  background:#2563eb;
+  color:white;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+.result{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  background:#f3f6ff;
+  border:1px solid #dbe4ff;
+  border-radius:9px;
+  white-space:pre-wrap;
+  font-size:14px;
+}
+
+.copy-btn{
+  background:#111827;
+}
+
+.section-title{
+  margin:35px 0 18px;
+  font-size:26px;
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:30px;
+  }
+
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">Tool<span>Nest</span></div>
+    <a class="back" href="index.html">← Back to ToolNest</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>🎬 Creator Studio</h1>
+  <p>
+    Create better videos, titles, scripts, descriptions and social content
+    with ToolNest's professional creator toolkit.
+  </p>
+</section>
+
+<main class="container">
+
+<h2 class="section-title">YouTube Tools</h2>
+
+<div class="tool-grid">
+
+<!-- TITLE GENERATOR -->
+<div class="card">
+  <h2>🔥 YouTube Title Generator</h2>
+  <p>Create engaging titles designed to attract attention.</p>
+
+  <label>Video Topic</label>
+  <input id="titleTopic" placeholder="e.g. How to make money online">
+
+  <label>Target Audience</label>
+  <input id="titleAudience" placeholder="e.g. Beginners">
+
+  <label>Style</label>
+  <select id="titleStyle">
+    <option>Professional</option>
+    <option>Curious</option>
+    <option>Emotional</option>
+    <option>Bold</option>
+    <option>Educational</option>
+  </select>
+
+  <button onclick="generateTitles()">Generate Titles</button>
+
+  <div id="titleResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('titleResult')">
+    Copy Titles
+  </button>
+</div>
+
+
+<!-- VIDEO IDEAS -->
+<div class="card">
+  <h2>💡 Video Ideas Generator</h2>
+  <p>Generate content ideas for YouTube, Shorts and social platforms.</p>
+
+  <label>Your Niche / Topic</label>
+  <input id="ideaTopic" placeholder="e.g. Fitness">
+
+  <label>Platform</label>
+  <select id="ideaPlatform">
+    <option>YouTube</option>
+    <option>YouTube Shorts</option>
+    <option>TikTok</option>
+    <option>Instagram Reels</option>
+  </select>
+
+  <label>Audience</label>
+  <input id="ideaAudience" placeholder="e.g. Beginners">
+
+  <button onclick="generateIdeas()">Generate Ideas</button>
+
+  <div id="ideasResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('ideasResult')">
+    Copy Ideas
+  </button>
+</div>
+
+
+<!-- VIDEO HOOKS -->
+<div class="card">
+  <h2>⚡ Hook Generator</h2>
+  <p>Create strong opening lines that make viewers want to keep watching.</p>
+
+  <label>Video Topic</label>
+  <input id="hookTopic" placeholder="e.g. Starting a business">
+
+  <label>Hook Style</label>
+  <select id="hookStyle">
+    <option>Curiosity</option>
+    <option>Problem / Solution</option>
+    <option>Story</option>
+    <option>Bold Statement</option>
+    <option>Question</option>
+  </select>
+
+  <button onclick="generateHooks()">Generate Hooks</button>
+
+  <div id="hooksResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('hooksResult')">
+    Copy Hooks
+  </button>
+</div>
+
+  </div>
+  <!-- ADVANCED SCRIPT BUILDER -->
+<div class="card">
+  <h2>🎥 Advanced Video Script Builder</h2>
+  <p>Build a structured script with hooks, scenes, voice-over and calls to action.</p>
+
+  <label>Video Topic</label>
+  <input id="scriptTopic" placeholder="e.g. How to start a YouTube channel">
+
+  <label>Video Length</label>
+  <select id="scriptLength">
+    <option>Short (30–60 seconds)</option>
+    <option>Medium (3–5 minutes)</option>
+    <option>Long (8–12 minutes)</option>
+  </select>
+
+  <label>Content Style</label>
+  <select id="scriptStyle">
+    <option>Educational</option>
+    <option>Storytelling</option>
+    <option>Entertainment</option>
+    <option>Professional</option>
+    <option>Motivational</option>
+  </select>
+
+  <label>Target Audience</label>
+  <input id="scriptAudience" placeholder="e.g. Beginners">
+
+  <button onclick="generateAdvancedScript()">
+    Generate Professional Script
+  </button>
+
+  <div id="scriptResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('scriptResult')">
+    Copy Script
+  </button>
+</div>
+
+
+<!-- DESCRIPTION GENERATOR -->
+<div class="card">
+  <h2>📝 YouTube Description Generator</h2>
+  <p>Create a professional, SEO-friendly video description.</p>
+
+  <label>Video Topic</label>
+  <input id="descriptionTopic" placeholder="e.g. Beginner photography tips">
+
+  <label>Main Keywords</label>
+  <input id="descriptionKeywords"
+         placeholder="e.g. photography, camera, beginner">
+
+  <label>Call To Action</label>
+  <input id="descriptionCTA"
+         placeholder="e.g. Subscribe for more tutorials">
+
+  <button onclick="generateAdvancedDescription()">
+    Generate Description
+  </button>
+
+  <div id="descriptionResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('descriptionResult')">
+    Copy Description
+  </button>
+</div>
+
+
+<!-- SHORTS SCRIPT -->
+<div class="card">
+  <h2>📱 Shorts & Reels Script</h2>
+  <p>Create short-form content structured for fast attention.</p>
+
+  <label>Topic</label>
+  <input id="shortTopic" placeholder="e.g. 5 money mistakes">
+
+  <label>Platform</label>
+  <select id="shortPlatform">
+    <option>YouTube Shorts</option>
+    <option>TikTok</option>
+    <option>Instagram Reels</option>
+  </select>
+
+  <label>Style</label>
+  <select id="shortStyle">
+    <option>Fast & Energetic</option>
+    <option>Educational</option>
+    <option>Storytelling</option>
+    <option>Funny</option>
+    <option>Motivational</option>
+  </select>
+
+  <button onclick="generateShortScript()">
+    Generate Short Script
+  </button>
+
+  <div id="shortResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('shortResult')">
+    Copy Script
+  </button>
+</div>
+
+
+<!-- THUMBNAIL TEXT -->
+<div class="card">
+  <h2>🖼️ Thumbnail Text Generator</h2>
+  <p>Generate short, attention-grabbing text for video thumbnails.</p>
+
+  <label>Video Topic</label>
+  <input id="thumbnailTopic"
+         placeholder="e.g. Make money online">
+
+  <label>Emotion</label>
+  <select id="thumbnailEmotion">
+    <option>Curiosity</option>
+    <option>Urgency</option>
+    <option>Excitement</option>
+    <option>Shock</option>
+    <option>Trust</option>
+  </select>
+
+  <button onclick="generateThumbnailText()">
+    Generate Thumbnail Text
+  </button>
+
+  <div id="thumbnailResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('thumbnailResult')">
+    Copy Text
+  </button>
+</div>
+
+
+<!-- VIDEO SEO -->
+<div class="card">
+  <h2>🔍 Video SEO Keyword Generator</h2>
+  <p>Generate keyword ideas you can use for video optimization.</p>
+
+  <label>Main Topic</label>
+  <input id="seoTopic"
+         placeholder="e.g. Fitness for beginners">
+
+  <label>Audience</label>
+  <input id="seoAudience"
+         placeholder="e.g. Men and women starting fitness">
+
+  <button onclick="generateSEOKeywords()">
+    Generate Keywords
+  </button>
+
+  <div id="seoResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('seoResult')">
+    Copy Keywords
+  </button>
+</div>
+
+
+<!-- CONTENT CALENDAR -->
+<div class="card">
+  <h2>📅 Content Calendar Generator</h2>
+  <p>Create a simple publishing plan for your next batch of content.</p>
+
+  <label>Niche</label>
+  <input id="calendarTopic"
+         placeholder="e.g. Tech">
+
+  <label>Number of Days</label>
+  <select id="calendarDays">
+    <option value="7">7 Days</option>
+    <option value="14">14 Days</option>
+    <option value="30">30 Days</option>
+  </select>
+
+  <label>Platform</label>
+  <select id="calendarPlatform">
+    <option>YouTube</option>
+    <option>TikTok</option>
+    <option>Instagram</option>
+    <option>Multiple Platforms</option>
+  </select>
+
+  <button onclick="generateCalendar()">
+    Generate Calendar
+  </button>
+
+  <div id="calendarResult" class="result"></div>
+
+  <button class="copy-btn"
+          onclick="copyResult('calendarResult')">
+    Copy Calendar
+  </button>
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+function showResult(id,text){
+  const box = document.getElementById(id);
+  box.style.display = "block";
+  box.innerText = text;
+}
+
+function copyResult(id){
+  const box = document.getElementById(id);
+
+  if(!box.innerText.trim()){
+    alert("Generate something first.");
+    return;
+  }
+
+  navigator.clipboard.writeText(box.innerText)
+    .then(() => alert("Copied successfully! ✅"))
+    .catch(() => alert("Copy failed. Please select and copy the text."));
+}
+
+
+function generateTitles(){
+  const topic = document.getElementById("titleTopic").value.trim();
+  const audience = document.getElementById("titleAudience").value.trim();
+  const style = document.getElementById("titleStyle").value;
+
+  if(!topic){
+    showResult("titleResult","Please enter a video topic.");
+    return;
+  }
+
+  const target = audience || "Beginners";
+
+  const titles = [
+    "How to Master " + topic + " — Complete Guide",
+    "The Truth About " + topic + " Nobody Tells You",
+    "7 Powerful " + topic + " Tips for " + target,
+    "I Tried " + topic + " — Here's What Happened",
+    "Before You Start " + topic + ", Watch This",
+    topic + ": The Beginner's Guide",
+    "Stop Making These " + topic + " Mistakes",
+    "The Ultimate " + topic + " Strategy for 2026"
+  ];
+
+  showResult(
+    "titleResult",
+    "STYLE: " + style + "\n\n" + titles.join("\n\n")
+  );
+}
+
+
+function generateIdeas(){
+  const topic = document.getElementById("ideaTopic").value.trim();
+  const platform = document.getElementById("ideaPlatform").value;
+  const audience = document.getElementById("ideaAudience").value.trim();
+
+  if(!topic){
+    showResult("ideasResult","Please enter your niche or topic.");
+    return;
+  }
+
+  const target = audience || "your audience";
+
+  const ideas = [
+    "Beginner's guide to " + topic,
+    "10 mistakes people make with " + topic,
+    "The truth about " + topic,
+    "5 things I wish I knew about " + topic,
+    "How to get better at " + topic,
+    "The biggest " + topic + " mistakes",
+    "I tried " + topic + " for 30 days",
+    "Complete " + topic + " challenge",
+    "Things nobody tells you about " + topic,
+    "Best " + topic + " tips for " + target
+  ];
+
+  showResult(
+    "ideasResult",
+    "PLATFORM: " + platform + "\n\n" +
+    ideas.map((x,i)=>(i+1)+". "+x).join("\n\n")
+  );
+}
+
+
+function generateHooks(){
+  const topic = document.getElementById("hookTopic").value.trim();
+  const style = document.getElementById("hookStyle").value;
+
+  if(!topic){
+    showResult("hooksResult","Please enter a topic.");
+    return;
+  }
+
+  const hooks = [
+    "Nobody tells you this about " + topic + "...",
+    "What if everything you knew about " + topic + " was wrong?",
+    "Before you try " + topic + ", watch this.",
+    "I discovered something about " + topic + " that changed everything.",
+    "Are you making this mistake with " + topic + "?",
+    "Here's the fastest way to understand " + topic + "."
+  ];
+
+  showResult(
+    "hooksResult",
+    "STYLE: " + style + "\n\n" +
+    hooks.map((x,i)=>(i+1)+". "+x).join("\n\n")
+  );
+}
+
+
+function generateAdvancedScript(){
+  const topic = document.getElementById("scriptTopic").value.trim();
+  const length = document.getElementById("scriptLength").value;
+  const style = document.getElementById("scriptStyle").value;
+  const audience = document.getElementById("scriptAudience").value.trim();
+
+  if(!topic){
+    showResult("scriptResult","Please enter a video topic.");
+    return;
+  }
+
+  const target = audience || "viewers";
+
+  const script =
+`🎬 PROFESSIONAL VIDEO SCRIPT
+
+TOPIC:
+${topic}
+
+FORMAT:
+${length}
+
+STYLE:
+${style}
+
+TARGET AUDIENCE:
+${target}
+
+
+⚡ HOOK
+"Before you do anything with ${topic}, there are a few things you need to know."
+
+
+🎙️ INTRO
+"Welcome back! In this video, we're breaking down ${topic} in a simple and practical way."
+
+
+🎥 SCENE 1 — THE PROBLEM
+VOICE-OVER:
+"Let's start with the biggest problem people face when dealing with ${topic}."
+
+
+🎞️ B-ROLL:
+Show examples, screenshots, demonstrations or relevant footage.
+
+
+💡 SCENE 2 — THE SOLUTION
+VOICE-OVER:
+"Here's what you can do instead. Start with the basics, focus on one step at a time and stay consistent."
+
+
+📌 ON-SCREEN TEXT:
+"Keep it simple. Stay consistent."
+
+
+🚀 SCENE 3 — PRACTICAL TIPS
+VOICE-OVER:
+"Here are three practical things you can start doing today."
+
+
+1. Understand the fundamentals.
+2. Practice consistently.
+3. Track your progress and improve.
+
+
+🔥 CTA
+"If this video helped you, hit the like button, subscribe and share it with someone who needs it."
+
+
+🎬 OUTRO
+"Thanks for watching. I'll see you in the next video!"`;
+
+  showResult("scriptResult",script);
+}
+
+
+function generateAdvancedDescription(){
+  const topic = document.getElementById("descriptionTopic").value.trim();
+  const keywords = document.getElementById("descriptionKeywords").value.trim();
+  const cta = document.getElementById("descriptionCTA").value.trim();
+
+  if(!topic){
+    showResult("descriptionResult","Please enter a video topic.");
+    return;
+  }
+
+  const call = cta || "Subscribe for more useful content.";
+
+  const description =
+`📌 ${topic}
+
+In this video, we explore ${topic} and break down the most important ideas, tips and strategies you need to know.
+
+Whether you're a beginner or already have experience, this video is designed to help you understand ${topic} more clearly and take practical action.
+
+🔑 KEYWORDS
+${keywords || topic}
+
+🚀 WHAT YOU'LL LEARN
+• Important concepts
+• Practical tips
+• Common mistakes
+• Useful strategies
+
+📢 ${call}
+
+If you found this video useful, don't forget to like, subscribe and share.
+
+#${topic.replace(/[^a-zA-Z0-9]/g,"")} #YouTube #Tips`;
+
+  showResult("descriptionResult",description);
+}
+
+
+function generateShortScript(){
+  const topic = document.getElementById("shortTopic").value.trim();
+  const platform = document.getElementById("shortPlatform").value;
+  const style = document.getElementById("shortStyle").value;
+
+  if(!topic){
+    showResult("shortResult","Please enter a topic.");
+    return;
+  }
+
+  const script =
+`📱 ${platform.toUpperCase()} SCRIPT
+
+STYLE: ${style}
+
+⚡ 0–3 SEC — HOOK
+"Stop scrolling! You need to know this about ${topic}."
+
+🎯 3–10 SEC — PROBLEM
+"Most people get ${topic} wrong because they overlook one simple thing."
+
+💡 10–25 SEC — VALUE
+"Here's what you should do: focus on the basics, avoid common mistakes and take action consistently."
+
+🔥 25–35 SEC — PAYOFF
+"Do this correctly and you'll have a much better understanding of ${topic}."
+
+📢 CTA
+"Follow for more quick tips!"`;
+
+  showResult("shortResult",script);
+}
+
+
+function generateThumbnailText(){
+  const topic = document.getElementById("thumbnailTopic").value.trim();
+  const emotion = document.getElementById("thumbnailEmotion").value;
+
+  if(!topic){
+    showResult("thumbnailResult","Please enter a video topic.");
+    return;
+  }
+
+  const texts = [
+    "THE TRUTH!",
+    "DON'T DO THIS!",
+    "YOU NEED TO KNOW!",
+    "THIS CHANGES EVERYTHING!",
+    "I WAS WRONG!",
+    "WATCH THIS FIRST!",
+    "THE SECRET!",
+    "STOP MAKING THIS MISTAKE!"
+  ];
+
+  showResult(
+    "thumbnailResult",
+    "EMOTION: " + emotion + "\n\n" +
+    texts.map((x,i)=>(i+1)+". "+x+" — "+topic).join("\n\n")
+  );
+}
+
+
+function generateSEOKeywords(){
+  const topic = document.getElementById("seoTopic").value.trim();
+  const audience = document.getElementById("seoAudience").value.trim();
+
+  if(!topic){
+    showResult("seoResult","Please enter a main topic.");
+    return;
+  }
+
+  const target = audience || "beginners";
+
+  const keywords = [
+    topic,
+    topic + " for " + target,
+    "how to " + topic,
+    topic + " tips",
+    topic + " tutorial",
+    topic + " guide",
+    "best " + topic,
+    topic + " explained",
+    topic + " for beginners",
+    topic + " mistakes",
+    topic + " strategy",
+    topic + " ideas"
+  ];
+
+  showResult(
+    "seoResult",
+    keywords.map((x,i)=>(i+1)+". "+x).join("\n")
+  );
+}
+
+
+function generateCalendar(){
+  const topic = document.getElementById("calendarTopic").value.trim();
+  const days = parseInt(document.getElementById("calendarDays").value);
+  const platform = document.getElementById("calendarPlatform").value;
+
+  if(!topic){
+    showResult("calendarResult","Please enter your niche.");
+    return;
+  }
+
+  const contentTypes = [
+    "Educational tip",
+    "How-to tutorial",
+    "Common mistakes",
+    "Top 5 list",
+    "Story / experience",
+    "Myth vs reality",
+    "Behind the scenes"
+  ];
+
+  let output =
+    "📅 " + days + "-DAY CONTENT CALENDAR\n" +
+    "NICHE: " + topic + "\n" +
+    "PLATFORM: " + platform + "\n\n";
+
+  for(let i=1;i<=days;i++){
+    output +=
+      "DAY " + i + " — " +
+      contentTypes[(i-1) % contentTypes.length] +
+      ": " + topic + "\n\n";
+  }
+
+  showResult("calendarResult",output);
+}
+
+</script>
+<style>
+.creator-footer{
+  margin-top:40px;
+  padding:30px 20px;
+  background:#111827;
+  color:white;
+  text-align:center;
+}
+
+.creator-footer h3{
+  margin-bottom:8px;
+}
+
+.creator-footer p{
+  color:#9ca3af;
+  font-size:13px;
+}
+
+.top-button{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#2563eb;
+  font-size:18px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  display:none;
+}
+</style>
+
+<footer class="creator-footer">
+  <h3>ToolNest Creator Studio 🚀</h3>
+  <p>
+    Free tools to help creators plan, write and grow better content.
+  </p>
+  <p style="margin-top:10px;">
+    © 2026 ToolNest. All rights reserved.
+  </p>
+</footer>
+
+<button id="topButton"
+        class="top-button"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  ↑
+</button>
+
+<script>
+window.addEventListener("scroll",function(){
+  const btn=document.getElementById("topButton");
+
+  if(window.scrollY>400){
+    btn.style.display="block";
+  }else{
+    btn.style.display="none";
+  }
+});
+</script>
+
+</body>
+</html>
