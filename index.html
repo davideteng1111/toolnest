@@ -1,2703 +1,1774 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ToolNest - Free online tools, calculators, business tools, creator tools and AI tools.">
-<title>ToolNest - Free Online Tools & AI Tools</title>
 
-  <style>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="ToolNest - Free online tools, calculators, business tools, creator tools and AI tools.">
+
+<meta name="keywords"
+content="free online tools, AI tools, calculators, business tools, creator tools">
+
+<title>ToolNest - Free Tools for Work, Business & Creativity</title>
+
+
+<style>
+
+/* =========================================
+   TOOLNEST — NEW DESIGN SYSTEM
+========================================= */
+
+:root{
+  --primary:#635bff;
+  --primary-dark:#5148e5;
+  --secondary:#8b5cf6;
+  --dark:#111827;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --border:#e5e7eb;
+  --success:#10b981;
+  --shadow:0 10px 35px rgba(15,23,42,.08);
+  --radius:18px;
+}
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
-    /* ===== TOOLNEST PRO UI UPGRADE ===== */
 
-body {
-  background: #f6f8fc;
-  color: #172033;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  max-width: 1150px;
-  margin: auto;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.section-title h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.section-title p {
-  color: #687386;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid #e6eaf0;
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: 0 8px 25px rgba(20, 30, 50, 0.06);
-  transition: 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(20, 30, 50, 0.12);
-}
-
-.card h3 {
-  font-size: 19px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: #687386;
-  line-height: 1.5;
-}
-
-input,
-select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 13px 14px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #dce1e9;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #172033;
-  font-size: 15px;
-  outline: none;
-}
-
-input:focus,
-select:focus {
-  border-color: #5b67f1;
-  box-shadow: 0 0 0 3px rgba(91, 103, 241, 0.12);
-}
-
-.btn {
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  padding: 13px 16px;
-  margin-top: 6px;
-  background: #5b67f1;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
-}
-
-.result {
-  margin-top: 14px;
-  padding: 15px;
-  border-radius: 12px;
-  background: #f3f5f9;
-  border: 1px solid #e2e6ed;
-  white-space: pre-wrap;
-  line-height: 1.6;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.ai-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.ai-controls {
-  margin-bottom: 25px;
-}
-
-.ai-search {
-  width: 100%;
-  max-width: 650px;
-  display: block;
-  margin: 0 auto 18px;
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.filter-btn {
-  border: 1px solid #dce1e9;
-  background: white;
-  color: #172033;
-  border-radius: 30px;
-  padding: 9px 15px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.filter-btn.active {
-  background: #5b67f1;
-  color: white;
-  border-color: #5b67f1;
-}
-
-@media (max-width: 600px) {
-
-  .section-title h2 {
-    font-size: 25px;
-  }
-
-  .card {
-    padding: 18px;
-    border-radius: 15px;
-  }
-
-  .tools-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .filters {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 5px;
-  }
-
-  .filter-btn {
-    flex-shrink: 0;
-  }
-
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
+  font-family:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Arial,
+  sans-serif;
+
+  background:#f8fafc;
+  color:var(--text);
   line-height:1.6;
 }
 
-header{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:white;
-  padding:18px 5%;
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:800;
-}
-
-.logo span{
-  color:#93c5fd;
-}
-
-nav a{
-  color:white;
+a{
   text-decoration:none;
-  margin-left:18px;
-  font-size:14px;
+  color:inherit;
 }
 
-.hero{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:white;
-  padding:70px 20px 85px;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:clamp(34px,7vw,60px);
-  margin-bottom:15px;
-}
-
-.hero p{
-  max-width:700px;
-  margin:0 auto 28px;
-  font-size:18px;
-  opacity:.92;
-}
-
-.search{
-  max-width:650px;
-  margin:auto;
-  display:flex;
-  background:white;
-  border-radius:14px;
-  padding:6px;
-}
-
-.search input{
-  flex:1;
-  border:0;
-  outline:0;
-  padding:14px;
-  font-size:16px;
-  border-radius:10px;
-}
-
-.search button{
-  border:0;
-  background:#2563eb;
-  color:white;
-  padding:0 22px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:bold;
+button,
+input,
+select,
+textarea{
+  font:inherit;
 }
 
 .container{
-  max-width:1200px;
+  width:min(1180px,92%);
   margin:auto;
-  padding:45px 20px;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:30px;
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(229,231,235,.8);
 }
 
-.section-title h2{
-  font-size:32px;
-  margin-bottom:8px;
-}
+.navbar{
+  min-height:72px;
 
-.section-title p{
-  color:#64748b;
-}
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
-.card{
-  background:white;
-  border-radius:16px;
-  padding:24px;
-  box-shadow:0 5px 20px rgba(15,23,42,.07);
-  border:1px solid #e5e7eb;
-}
-
-.card h3{
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#64748b;
-  margin-bottom:15px;
-}
-
-.card input,
-.card select,
-.card textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #d1d5db;
-  border-radius:9px;
-  margin:7px 0;
-  font-size:15px;
-}
-
-.card textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-.btn{
-  background:#2563eb;
-  color:white;
-  border:0;
-  padding:12px 18px;
-  border-radius:9px;
-  cursor:pointer;
-  font-weight:bold;
-  margin-top:8px;
-}
-
-.btn:hover{
-  opacity:.9;
-}
-
-.result{
-  margin-top:15px;
-  padding:13px;
-  background:#eff6ff;
-  border-radius:9px;
-  font-weight:bold;
-  word-wrap:break-word;
-}
-
-.ai-section{
-  background:#eef4ff;
-}
-
-.ai-controls{
-  max-width:850px;
-  margin:0 auto 30px;
-}
-
-.ai-search{
-  width:100%;
-  padding:15px;
-  border:1px solid #cbd5e1;
-  border-radius:12px;
-  font-size:16px;
-  margin-bottom:15px;
-  outline:none;
-}
-
-.filters{
+.logo{
   display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  justify-content:center;
+  align-items:center;
+  gap:10px;
+
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.6px;
 }
 
-.filter-btn{
-  border:1px solid #cbd5e1;
-  background:white;
-  padding:9px 14px;
-  border-radius:30px;
-  cursor:pointer;
-}
+.logo-icon{
+  width:38px;
+  height:38px;
 
-.filter-btn.active{
-  background:#2563eb;
-  color:white;
-  border-color:#2563eb;
-}
-
-.ai-card{
-  position:relative;
-}
-
-.ai-icon{
-  width:52px;
-  height:52px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#eff6ff;
-  border-radius:13px;
-  font-size:27px;
-  margin-bottom:15px;
-}
 
-.badge{
-  display:inline-block;
-  padding:4px 9px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
+  border-radius:11px;
 
-.free{
-  background:#dcfce7;
-  color:#166534;
-}
-
-.freemium{
-  background:#fef3c7;
-  color:#92400e;
-}
-
-.paid{
-  background:#fee2e2;
-  color:#991b1b;
-}
-
-.category{
-  color:#64748b;
-  font-size:13px;
-  margin-bottom:5px;
-}
-
-.ai-link{
-  display:inline-block;
-  text-decoration:none;
-  background:#111827;
   color:white;
-  padding:10px 15px;
-  border-radius:8px;
-  margin-top:8px;
+
+  background:
+  linear-gradient(135deg,
+  var(--primary),
+  var(--secondary));
+
+  box-shadow:
+  0 8px 20px rgba(99,91,255,.25);
+}
+
+.logo span{
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.nav-links a{
+  padding:9px 13px;
+
+  color:#4b5563;
+
   font-size:14px;
-  font-weight:bold;
+  font-weight:600;
+
+  border-radius:10px;
+
+  transition:.2s;
 }
 
-.featured{
-  border:2px solid #2563eb;
+.nav-links a:hover{
+  background:#f1f3ff;
+  color:var(--primary);
 }
 
-.featured-label{
-  position:absolute;
-  right:15px;
-  top:15px;
-  background:#2563eb;
-  color:white;
-  padding:4px 8px;
-  border-radius:20px;
-  font-size:11px;
+.nav-button{
+  background:var(--dark) !important;
+  color:white !important;
 }
 
-.invoice-box{
-  background:#f8fafc;
-  padding:18px;
-  border-radius:12px;
-  margin-top:15px;
+.nav-button:hover{
+  background:#000 !important;
+  color:white !important;
 }
 
-.invoice-preview{
-  background:white;
-  padding:25px;
-  border:1px solid #ddd;
-  margin-top:20px;
-  overflow-x:auto;
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  padding:85px 0 70px;
+
+  background:
+  radial-gradient(
+    circle at 15% 20%,
+    rgba(99,91,255,.16),
+    transparent 30%
+  ),
+  radial-gradient(
+    circle at 85% 20%,
+    rgba(139,92,246,.14),
+    transparent 30%
+  ),
+  #ffffff;
 }
 
-.invoice-preview table{
+.hero-content{
+  max-width:850px;
+  margin:auto;
+
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:7px 13px;
+
+  margin-bottom:22px;
+
+  border:1px solid #ddd9ff;
+  border-radius:50px;
+
+  background:#f5f3ff;
+  color:#554be8;
+
+  font-size:13px;
+  font-weight:700;
+}
+
+.hero-badge-dot{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--success);
+}
+
+.hero h1{
+  font-size:clamp(38px,7vw,68px);
+
+  line-height:1.05;
+
+  letter-spacing:-2.5px;
+
+  font-weight:900;
+
+  color:#111827;
+
+  margin-bottom:22px;
+}
+
+.hero h1 .gradient-text{
+  background:
+  linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
+}
+
+.hero-subtitle{
+  max-width:680px;
+  margin:0 auto 32px;
+
+  color:var(--muted);
+
+  font-size:18px;
+  line-height:1.7;
+}
+
+
+/* =========================================
+   GLOBAL SEARCH
+========================================= */
+
+.hero-search{
+  max-width:700px;
+  margin:auto;
+
+  position:relative;
+}
+
+.hero-search input{
   width:100%;
-  border-collapse:collapse;
-  margin-top:15px;
+
+  height:62px;
+
+  padding:0 58px 0 22px;
+
+  border:1px solid #dfe3eb;
+
+  border-radius:16px;
+
+  background:white;
+
+  color:var(--dark);
+
+  outline:none;
+
+  box-shadow:
+  0 15px 40px rgba(15,23,42,.08);
+
+  font-size:16px;
+
+  transition:.2s;
 }
 
-.invoice-preview th,
-.invoice-preview td{
-  border-bottom:1px solid #ddd;
-  padding:9px;
-  text-align:left;
+.hero-search input:focus{
+  border-color:var(--primary);
+
+  box-shadow:
+  0 0 0 4px rgba(99,91,255,.10),
+  0 15px 40px rgba(15,23,42,.08);
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin-bottom:35px;
+.search-icon{
+  position:absolute;
+
+  right:20px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  font-size:22px;
+
+  color:#9ca3af;
+}
+
+
+/* =========================================
+   HERO CATEGORY LINKS
+========================================= */
+
+.hero-categories{
+  display:flex;
+
+  justify-content:center;
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:24px;
+}
+
+.category-pill{
+  padding:8px 13px;
+
+  border:1px solid var(--border);
+
+  border-radius:50px;
+
+  background:white;
+
+  color:#4b5563;
+
+  font-size:13px;
+  font-weight:600;
+
+  transition:.2s;
+}
+
+.category-pill:hover{
+  border-color:#c9c5ff;
+
+  color:var(--primary);
+
+  background:#faf9ff;
+}
+
+
+/* =========================================
+   HERO STATS
+========================================= */
+
+.hero-stats{
+  display:flex;
+
+  justify-content:center;
+
+  gap:50px;
+
+  margin-top:48px;
 }
 
 .stat{
-  background:white;
-  padding:25px;
-  border-radius:14px;
   text-align:center;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
 }
 
 .stat strong{
   display:block;
-  font-size:30px;
-  color:#2563eb;
+
+  font-size:25px;
+
+  font-weight:900;
+
+  color:var(--dark);
 }
 
-.cta{
-  background:linear-gradient(135deg,#111827,#2563eb);
-  color:white;
-  border-radius:20px;
-  padding:45px 25px;
+.stat span{
+  display:block;
+
+  margin-top:2px;
+
+  color:#9ca3af;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+
+/* =========================================
+   SECTION BASE
+========================================= */
+
+section{
+  padding:80px 0;
+}
+
+.section-heading{
   text-align:center;
+
+  max-width:700px;
+
+  margin:0 auto 42px;
 }
 
-.cta h2{
+.section-heading .eyebrow{
+  display:inline-block;
+
   margin-bottom:10px;
+
+  color:var(--primary);
+
+  font-size:13px;
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
 }
 
-footer{
-  background:#111827;
-  color:#cbd5e1;
-  text-align:center;
-  padding:35px 20px;
-  margin-top:40px;
+.section-heading h2{
+  font-size:clamp(28px,5vw,40px);
+
+  line-height:1.15;
+
+  letter-spacing:-1px;
+
+  color:var(--dark);
+
+  margin-bottom:12px;
 }
 
-footer strong{
-  color:white;
+.section-heading p{
+  color:var(--muted);
+
+  font-size:16px;
 }
 
-@media(max-width:600px){
-  nav a{
+
+/* =========================================
+   MOBILE HEADER
+========================================= */
+
+@media(max-width:760px){
+
+  .navbar{
+    min-height:64px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .logo-icon{
+    width:34px;
+    height:34px;
+  }
+
+  .nav-links{
+    overflow-x:auto;
+
+    max-width:58%;
+
+    scrollbar-width:none;
+  }
+
+  .nav-links::-webkit-scrollbar{
+    display:none;
+  }
+
+  .nav-links a{
+    white-space:nowrap;
+
+    padding:7px 9px;
+
+    font-size:12px;
+  }
+
+  .nav-button{
     display:none;
   }
 
   .hero{
-    padding-top:50px;
+    padding:65px 0 55px;
   }
 
-  .search{
-    flex-direction:column;
-    gap:6px;
+  .hero h1{
+    letter-spacing:-1.5px;
   }
 
-  .search button{
-    padding:13px;
+  .hero-subtitle{
+    font-size:16px;
   }
 
-  .container{
-    padding:35px 15px;
+  .hero-search input{
+    height:56px;
+
+    border-radius:14px;
   }
+
+  .hero-stats{
+    gap:25px;
+
+    margin-top:38px;
+  }
+
+  .stat strong{
+    font-size:21px;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
 }
 
-@media print{
-  header,
-  .hero,
-  .section-title,
-  .no-print,
-  footer{
-    display:none!important;
-  }
-
-  body{
-    background:white;
-  }
-
-  .invoice-preview{
-    border:0;
-  }
-}
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">Tool<span>Nest</span> 🚀</div>
-    <nav>
-      <a href="#tools">Tools</a>
-      <a href="#business">Business</a>
-      <a href="#ai">AI Tools</a>
-      <a href="#creator">Creator</a>
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+  <div class="container navbar">
+
+    <a href="#home" class="logo">
+
+      <div class="logo-icon">
+        ⚡
+      </div>
+
+      Tool<span>Nest</span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#tools">
+        Free Tools
+      </a>
+
+      <a href="#business">
+        Business
+      </a>
+
+      <a href="#creator">
+        Creator
+      </a>
+
+      <a href="#ai">
+        AI Tools
+      </a>
+
+      <a href="#tools" class="nav-button">
+        Explore Tools
+      </a>
+
     </nav>
+
   </div>
+
 </header>
 
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<main id="home">
+
 <section class="hero">
-  <h1>Free Tools. Smarter Work.</h1>
-  <p>
-    ToolNest gives you useful calculators, business tools, creator tools and
-    a growing directory of AI tools — all in one place.
-  </p>
 
-  <div class="search">
-    <input id="globalSearch" type="text"
-      placeholder="Search calculators, AI tools, invoice tools..."
-      onkeyup="globalSearch()">
-    <button onclick="globalSearch()">Search</button>
-  </div>
-</section>
+  <div class="container">
 
-<section id="tools" class="container">
+    <div class="hero-content">
 
-  <div class="section-title">
-    <h2>🛠️ Popular Free Tools</h2>
-    <p>Simple tools you can use instantly.</p>
-  </div>
 
-  <div class="stats">
-    <div class="stat">
-      <strong>20+</strong>
-      Tools
-    </div>
+      <div class="hero-badge">
 
-    <div class="stat">
-      <strong>8</strong>
-      AI Categories
-    </div>
+        <span class="hero-badge-dot"></span>
 
-    <div class="stat">
-      <strong>100%</strong>
-      Browser Based
-    </div>
-  </div>
-
-  <div class="tools-grid">
-
-    <div class="card searchable">
-      <h3>📊 Percentage Calculator</h3>
-      <p>Find a percentage of any number.</p>
-
-      <input id="percent" type="number" placeholder="Percentage">
-      <input id="percentNumber" type="number" placeholder="Number">
-
-      <button class="btn" onclick="calculatePercentage()">Calculate</button>
-
-      <div class="result" id="percentageResult">
-        Your answer will appear here.
-      </div>
-    </div>
-
-    <div class="card searchable">
-      <h3>🎂 Age Calculator</h3>
-      <p>Calculate your exact age.</p>
-
-      <input id="birthDate" type="date">
-
-      <button class="btn" onclick="calculateAge()">Calculate Age</button>
-
-      <div class="result" id="ageResult">
-        Your age will appear here.
-      </div>
-    </div>
-
-    <div class="card searchable">
-      <h3>🏷️ Discount Calculator</h3>
-      <p>Calculate sale prices and savings.</p>
-
-      <input id="originalPrice" type="number" placeholder="Original price">
-      <input id="discountPercent" type="number" placeholder="Discount %">
-
-      <button class="btn" onclick="calculateDiscount()">Calculate</button>
-
-      <div class="result" id="discountResult">
-        Your result will appear here.
-      </div>
-    </div>
-
-    <div class="card searchable">
-      <h3>✍️ Word & Character Counter</h3>
-      <p>Count words and characters instantly.</p>
-
-      <textarea id="counterText"
-        placeholder="Type or paste your text here..."
-        oninput="countWords()"></textarea>
-
-      <div class="result" id="counterResult">
-        Words: 0 | Characters: 0
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="business" class="container">
-
-  <div class="section-title">
-    <h2>💼 Business Tools</h2>
-    <p>Useful tools for freelancers, entrepreneurs and businesses.</p>
-  </div>
-
-  <div class="tools-grid">
-
-    <div class="card searchable">
-      <h3>💰 Profit Margin Calculator</h3>
-      <p>Calculate your profit and margin.</p>
-
-      <input id="costPrice" type="number" placeholder="Cost price">
-      <input id="sellingPrice" type="number" placeholder="Selling price">
-
-      <button class="btn" onclick="calculateProfit()">Calculate</button>
-
-      <div class="result" id="profitResult">
-        Your result will appear here.
-      </div>
-    </div>
-
-    <div class="card searchable">
-      <h3>💡 Business Name Generator</h3>
-      <p>Generate business name ideas.</p>
-
-      <input id="businessKeyword"
-        placeholder="Example: Fashion, Tech, Food">
-
-      <button class="btn" onclick="generateBusinessNames()">
-        Generate Names
-      </button>
-
-      <div class="result" id="businessNameResult">
-        Your ideas will appear here.
-      </div>
-    </div>
-
-    <div class="card searchable" style="grid-column:1/-1">
-
-      <h3>🧾 Invoice Generator</h3>
-      <p>Create a professional invoice and print/save it as PDF.</p>
-
-      <div class="invoice-box">
-
-        <input id="businessName"
-          placeholder="Your Business Name">
-
-        <input id="customerName"
-          placeholder="Customer Name">
-
-        <input id="invoiceNumber"
-          placeholder="Invoice Number">
-
-        <input id="invoiceDate"
-          type="date">
-
-        <input id="businessEmail"
-          type="email"
-          placeholder="Business Email">
-
-        <input id="taxRate"
-          type="number"
-          placeholder="Tax % (optional)">
-
-        <h4>Items / Services</h4>
-
-        <input id="item1"
-          placeholder="Item or service">
-
-        <input id="qty1"
-          type="number"
-          placeholder="Quantity"
-          value="1">
-
-        <input id="price1"
-          type="number"
-          placeholder="Price">
-
-        <input id="item2"
-          placeholder="Second item/service">
-
-        <input id="qty2"
-          type="number"
-          placeholder="Quantity"
-          value="1">
-
-        <input id="price2"
-          type="number"
-          placeholder="Price">
-
-        <input id="item3"
-          placeholder="Third item/service">
-
-        <input id="qty3"
-          type="number"
-          placeholder="Quantity"
-          value="1">
-
-        <input id="price3"
-          type="number"
-          placeholder="Price">
-
-        <button class="btn" onclick="generateInvoice()">
-          Generate Invoice
-        </button>
-
-        <button class="btn no-print"
-          onclick="window.print()">
-          🖨️ Print / Save PDF
-        </button>
+        Free tools. No signup required.
 
       </div>
 
-      <div id="invoicePreview"
-        class="invoice-preview"
-        style="display:none">
+
+      <h1>
+
+        Powerful tools for
+
+        <span class="gradient-text">
+          work, business & creativity.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-subtitle">
+
+        ToolNest brings useful calculators, business utilities,
+        creator tools and AI tools together in one simple place.
+
+      </p>
+
+
+      <div class="hero-search">
+
+        <input
+          id="globalSearch"
+          type="search"
+          placeholder="Search for a tool..."
+          autocomplete="off"
+        >
+
+        <span class="search-icon">
+          🔍
+        </span>
+
       </div>
+
+
+      <div class="hero-categories">
+
+        <a href="#tools" class="category-pill">
+          🧮 Calculators
+        </a>
+
+        <a href="#business" class="category-pill">
+          💼 Business
+        </a>
+
+        <a href="#creator" class="category-pill">
+          🎬 Creator
+        </a>
+
+        <a href="#ai" class="category-pill">
+          🤖 AI Tools
+        </a>
+
+        <a href="#tools" class="category-pill">
+          ✨ More Tools
+        </a>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div class="stat">
+
+          <strong>20+</strong>
+
+          <span>
+            Free Tools
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>8</strong>
+
+          <span>
+            AI Categories
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>100%</strong>
+
+          <span>
+            Free to Use
+          </span>
+
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
-</section>
-<section id="creator" class="container">
 
-  <div class="section-title">
-    <h2>🎬 Creator Pro Studio</h2>
-    <p>Professional tools for YouTube, TikTok, Instagram and content creators.</p>
-  </div>
-
-  <div class="tools-grid">
-
-    <!-- TITLE GENERATOR -->
-    <div class="card searchable">
-      <h3>🎯 Pro Title Generator</h3>
-      <p>Create stronger, clickable video titles.</p>
-
-      <input id="titleTopic" placeholder="Video topic">
-      
-      <select id="titleStyle">
-        <option>High CTR</option>
-        <option>Educational</option>
-        <option>Curiosity</option>
-        <option>Storytelling</option>
-        <option>Professional</option>
-      </select>
-
-      <input id="titleAudience" placeholder="Target audience (optional)">
-
-      <button class="btn" onclick="generateTitles()">
-        Generate Titles
-      </button>
-
-      <div class="result" id="titleResult">
-        Your professional titles will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('titleResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- VIDEO IDEAS -->
-    <div class="card searchable">
-      <h3>💡 Content Idea Generator</h3>
-      <p>Generate multiple content angles for your niche.</p>
-
-      <input id="videoTopic"
-        placeholder="Niche or topic">
-
-      <select id="ideaPlatform">
-        <option>YouTube</option>
-        <option>TikTok</option>
-        <option>Instagram</option>
-        <option>All Platforms</option>
-      </select>
-
-      <input id="ideaAudience"
-        placeholder="Target audience">
-
-      <button class="btn" onclick="generateVideoIdeas()">
-        Generate Ideas
-      </button>
-
-      <div class="result" id="videoIdeasResult">
-        Your content ideas will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('videoIdeasResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- HOOK GENERATOR -->
-    <div class="card searchable">
-      <h3>⚡ Viral Hook Generator</h3>
-      <p>Create attention-grabbing opening lines.</p>
-
-      <input id="hookTopic"
-        placeholder="What is your video about?">
-
-      <select id="hookStyle">
-        <option>Curiosity</option>
-        <option>Shock</option>
-        <option>Storytelling</option>
-        <option>Problem & Solution</option>
-        <option>Bold Statement</option>
-      </select>
-
-      <button class="btn" onclick="generateHooks()">
-        Generate Hooks
-      </button>
-
-      <div class="result" id="hooksResult">
-        Your hooks will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('hooksResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- ADVANCED SCRIPT -->
-    <div class="card searchable">
-      <h3>🎥 Advanced Script Builder</h3>
-      <p>Build a complete video structure from hook to CTA.</p>
-
-      <input id="scriptTopic"
-        placeholder="Video topic">
-
-      <select id="scriptLength">
-        <option>Short — 30 to 60 seconds</option>
-        <option>Medium — 3 to 5 minutes</option>
-        <option>Long — 8 to 12 minutes</option>
-      </select>
-
-      <select id="scriptStyle">
-        <option>Educational</option>
-        <option>Storytelling</option>
-        <option>Entertainment</option>
-        <option>Motivational</option>
-        <option>Professional</option>
-      </select>
-
-      <input id="scriptAudience"
-        placeholder="Target audience">
-
-      <button class="btn" onclick="generateScript()">
-        Generate Pro Script
-      </button>
-
-      <div class="result" id="scriptResult">
-        Your complete script will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('scriptResult')">
-        📋 Copy Script
-      </button>
-    </div>
-
-
-    <!-- SHORTS -->
-    <div class="card searchable">
-      <h3>📱 Shorts & Reels Script</h3>
-      <p>Create short-form scripts designed for fast attention.</p>
-
-      <input id="shortTopic"
-        placeholder="Short video topic">
-
-      <select id="shortPlatform">
-        <option>YouTube Shorts</option>
-        <option>TikTok</option>
-        <option>Instagram Reels</option>
-      </select>
-
-      <select id="shortStyle">
-        <option>Fast & Energetic</option>
-        <option>Educational</option>
-        <option>Funny</option>
-        <option>Storytelling</option>
-        <option>Motivational</option>
-      </select>
-
-      <button class="btn" onclick="generateShortScript()">
-        Generate Short Script
-      </button>
-
-      <div class="result" id="shortResult">
-        Your short-form script will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('shortResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <div class="card searchable">
-      <h3>📝 YouTube Description Pro</h3>
-      <p>Create structured and SEO-friendly descriptions.</p>
-
-      <input id="descriptionTopic"
-        placeholder="Video topic">
-
-      <input id="descriptionKeywords"
-        placeholder="Main keywords">
-
-      <input id="descriptionCTA"
-        placeholder="Call to action">
-
-      <button class="btn" onclick="generateDescription()">
-        Generate Description
-      </button>
-
-      <div class="result" id="descriptionResult">
-        Your description will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('descriptionResult')">
-        📋 Copy
-      </button>
-    </div>
-    <!-- THUMBNAIL TEXT -->
-    <div class="card searchable">
-      <h3>🖼️ Thumbnail Text Generator</h3>
-      <p>Create short, powerful thumbnail phrases.</p>
-
-      <input id="thumbnailTopic"
-        placeholder="Video topic">
-
-      <select id="thumbnailEmotion">
-        <option>Curiosity</option>
-        <option>Shock</option>
-        <option>Urgency</option>
-        <option>Excitement</option>
-        <option>Trust</option>
-      </select>
-
-      <button class="btn" onclick="generateThumbnailText()">
-        Generate Thumbnail Text
-      </button>
-
-      <div class="result" id="thumbnailResult">
-        Thumbnail ideas will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('thumbnailResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- SEO KEYWORDS -->
-    <div class="card searchable">
-      <h3>🔍 Video SEO Keywords</h3>
-      <p>Generate useful keyword ideas for your videos.</p>
-
-      <input id="seoTopic"
-        placeholder="Main topic">
-
-      <input id="seoAudience"
-        placeholder="Target audience">
-
-      <button class="btn" onclick="generateSEOKeywords()">
-        Generate Keywords
-      </button>
-
-      <div class="result" id="seoResult">
-        SEO keywords will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('seoResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- CONTENT CALENDAR -->
-    <div class="card searchable">
-      <h3>📅 Content Calendar</h3>
-      <p>Plan your content for the next 7, 14 or 30 days.</p>
-
-      <input id="calendarTopic"
-        placeholder="Your niche">
-
-      <select id="calendarDays">
-        <option value="7">7 Days</option>
-        <option value="14">14 Days</option>
-        <option value="30">30 Days</option>
-      </select>
-
-      <select id="calendarPlatform">
-        <option>YouTube</option>
-        <option>TikTok</option>
-        <option>Instagram</option>
-        <option>Multiple Platforms</option>
-      </select>
-
-      <button class="btn" onclick="generateCalendar()">
-        Generate Calendar
-      </button>
-
-      <div class="result" id="calendarResult">
-        Your content calendar will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('calendarResult')">
-        📋 Copy
-      </button>
-    </div>
-
-
-    <!-- SOCIAL CAPTION -->
-    <div class="card searchable">
-      <h3>📢 Social Caption Generator</h3>
-      <p>Create captions for Instagram, TikTok, Facebook and X.</p>
-
-      <input id="captionTopic"
-        placeholder="What is your post about?">
-
-      <select id="captionPlatform">
-        <option>Instagram</option>
-        <option>TikTok</option>
-        <option>Facebook</option>
-        <option>X</option>
-        <option>LinkedIn</option>
-      </select>
-
-      <button class="btn" onclick="generateCaption()">
-        Generate Caption
-      </button>
-
-      <div class="result" id="captionResult">
-        Your caption will appear here.
-      </div>
-
-      <button class="btn" onclick="copyCreatorResult('captionResult')">
-        📋 Copy
-      </button>
-    </div>
-
-  </div>
 </section>
 
 
-<script>
+<!-- =========================================
+     FREE TOOLS
+========================================= -->
 
-function creatorResult(id, text){
-  const box = document.getElementById(id);
+<section id="tools">
 
-  if(box){
-    box.innerText = text;
-    box.style.display = "block";
-  }
-}
+  <div class="container">
 
+    <div class="section-heading">
 
-function copyCreatorResult(id){
-  const box = document.getElementById(id);
+      <span class="eyebrow">
+        ⚡ Free Tools
+      </span>
 
-  if(!box || !box.innerText.trim()){
-    alert("Generate something first.");
-    return;
-  }
+      <h2>
+        Everyday tools, made simple.
+      </h2>
 
-  navigator.clipboard.writeText(box.innerText)
-    .then(() => alert("Copied successfully! ✅"))
-    .catch(() => alert("Please select and copy the text."));
-}
+      <p>
+        Calculate, convert, count and solve everyday problems
+        without complicated software or signups.
+      </p>
 
+    </div>
 
-function generateTitles(){
 
-  const topic = document.getElementById("titleTopic").value.trim();
-  const style = document.getElementById("titleStyle").value;
-  const audience =
-    document.getElementById("titleAudience").value.trim() || "beginners";
+    <!-- TOOL CATEGORY BAR -->
 
-  if(!topic){
-    creatorResult("titleResult","Please enter a video topic.");
-    return;
-  }
+    <div class="tool-categories">
 
-  const titles = [
-
-    "How to Master " + topic + " — Complete Guide",
-
-    "The Truth About " + topic +
-    " Nobody Tells You",
-
-    "7 " + topic + " Tips Every " +
-    audience + " Should Know",
-
-    "I Tried " + topic +
-    " — Here's What Happened",
-
-    "Before You Start " + topic +
-    ", Watch This",
-
-    "Stop Making These " +
-    topic + " Mistakes",
-
-    "The Ultimate " + topic +
-    " Guide",
-
-    topic + " Explained Simply"
-  ];
-
-  creatorResult(
-    "titleResult",
-    "STYLE: " + style + "\n\n" +
-    titles.map((x,i) => (i+1) + ". " + x).join("\n\n")
-  );
-}
-
-
-function generateVideoIdeas(){
-
-  const topic =
-    document.getElementById("videoTopic").value.trim();
-
-  const platform =
-    document.getElementById("ideaPlatform").value;
-
-  const audience =
-    document.getElementById("ideaAudience").value.trim() ||
-    "your audience";
-
-  if(!topic){
-    creatorResult(
-      "videoIdeasResult",
-      "Please enter a niche or topic."
-    );
-    return;
-  }
-
-  const ideas = [
-
-    "Beginner's Guide to " + topic,
-
-    "10 Mistakes People Make With " + topic,
-
-    "The Truth About " + topic,
-
-    "5 Things I Wish I Knew About " + topic,
-
-    "How to Get Better at " + topic,
-
-    "Best " + topic + " Tips for " + audience,
-
-    "I Tried " + topic + " for 30 Days",
-
-    "Things Nobody Tells You About " + topic,
-
-    "Top 10 " + topic + " Strategies",
-
-    topic + " Myths vs Reality"
-  ];
-
-  creatorResult(
-    "videoIdeasResult",
-    "PLATFORM: " + platform + "\n\n" +
-    ideas.map((x,i) => (i+1) + ". " + x).join("\n\n")
-  );
-}
-
-
-function generateHooks(){
-
-  const topic =
-    document.getElementById("hookTopic").value.trim();
-
-  const style =
-    document.getElementById("hookStyle").value;
-
-  if(!topic){
-    creatorResult(
-      "hooksResult",
-      "Please enter a topic."
-    );
-    return;
-  }
-
-  const hooks = [
-
-    "Stop scrolling! Here's what nobody tells you about " + topic + ".",
-
-    "What if everything you knew about " + topic + " was wrong?",
-
-    "Before you try " + topic + ", watch this.",
-
-    "I discovered something about " + topic + " that changed everything.",
-
-    "Are you making this mistake with " + topic + "?",
-
-    "Here's the fastest way to understand " + topic + ".",
-
-    "If you're struggling with " + topic + ", listen to this.",
-
-    "Most people fail at " + topic + " because of this one mistake."
-  ];
-
-  creatorResult(
-    "hooksResult",
-    "STYLE: " + style + "\n\n" +
-    hooks.map((x,i) => (i+1) + ". " + x).join("\n\n")
-  );
-}
-
-
-function generateScript(){
-
-  const topic =
-    document.getElementById("scriptTopic").value.trim();
-
-  const length =
-    document.getElementById("scriptLength").value;
-
-  const style =
-    document.getElementById("scriptStyle").value;
-
-  const audience =
-    document.getElementById("scriptAudience").value.trim() ||
-    "viewers";
-
-  if(!topic){
-    creatorResult(
-      "scriptResult",
-      "Please enter a video topic."
-    );
-    return;
-  }
-
-  const script =
-
-`🎬 PROFESSIONAL VIDEO SCRIPT
-
-TOPIC:
-${topic}
-
-FORMAT:
-${length}
-
-STYLE:
-${style}
-
-TARGET AUDIENCE:
-${audience}
-
-
-⚡ HOOK
-
-"Stop scrolling! Before you try ${topic}, there are a few things you need to know."
-
-
-🎙️ INTRO
-
-"Welcome back! Today we're breaking down ${topic} and showing you exactly what you need to know."
-
-
-🎥 SCENE 1 — THE PROBLEM
-
-VOICE-OVER:
-
-"Let's start with the biggest problem people face when dealing with ${topic}."
-
-
-🎞️ B-ROLL
-
-Show relevant footage, screenshots, examples or demonstrations.
-
-
-💡 SCENE 2 — THE SOLUTION
-
-VOICE-OVER:
-
-"Here's what you should do instead. Start with the basics, focus on one step at a time and stay consistent."
-
-
-📌 ON-SCREEN TEXT
-
-"KEEP IT SIMPLE. STAY CONSISTENT."
-
-
-🚀 SCENE 3 — PRACTICAL VALUE
-
-1. Understand the fundamentals.
-2. Practice consistently.
-3. Track your progress.
-4. Learn from mistakes.
-5. Keep improving.
-
-
-🔥 CALL TO ACTION
-
-"If this video helped you, like the video, subscribe and share it with someone who needs it."
-
-
-🎬 OUTRO
-
-"Thanks for watching. I'll see you in the next video!"`;
-
-  creatorResult("scriptResult",script);
-}
-
-
-function generateDescription(){
-
-  const topic =
-    document.getElementById("descriptionTopic").value.trim();
-
-  const keywords =
-    document.getElementById("descriptionKeywords").value.trim() ||
-    topic;
-
-  const cta =
-    document.getElementById("descriptionCTA").value.trim() ||
-    "Subscribe for more useful content.";
-
-  if(!topic){
-    creatorResult(
-      "descriptionResult",
-      "Please enter a video topic."
-    );
-    return;
-  }
-
-  const description =
-
-`📌 ${topic}
-
-In this video, we explore ${topic} and break down the most important tips, strategies and ideas you need to know.
-
-Whether you're a beginner or already have experience, this video is designed to help you understand ${topic} and take practical action.
-
-🔑 KEYWORDS
-
-${keywords}
-
-🚀 WHAT YOU'LL LEARN
-
-• Important concepts
-• Practical tips
-• Common mistakes
-• Useful strategies
-
-📢 CALL TO ACTION
-
-${cta}
-
-If you found this video useful, don't forget to like, subscribe and share.
-
-#YouTube #${topic.replace(/[^a-zA-Z0-9]/g,"")}`;
-
-  creatorResult("descriptionResult",description);
-}
-
-
-function generateShortScript(){
-
-  const topic =
-    document.getElementById("shortTopic").value.trim();
-
-  const platform =
-    document.getElementById("shortPlatform").value;
-
-  const style =
-    document.getElementById("shortStyle").value;
-
-  if(!topic){
-    creatorResult(
-      "shortResult",
-      "Please enter a topic."
-    );
-    return;
-  }
-
-  const script =
-
-`📱 ${platform.toUpperCase()}
-
-STYLE: ${style}
-
-
-⚡ 0–3 SEC — HOOK
-
-"Stop scrolling! You need to know this about ${topic}."
-
-
-🎯 3–10 SEC — PROBLEM
-
-"Most people get ${topic} wrong because they overlook one simple thing."
-
-
-💡 10–25 SEC — VALUE
-
-"Here's what you should do: focus on the basics, avoid common mistakes and take action consistently."
-
-
-🔥 25–35 SEC — PAYOFF
-
-"Do this correctly and you'll have a much better understanding of ${topic}."
-
-
-📢 CTA
-
-"Follow for more quick tips!"`;
-
-  creatorResult("shortResult",script);
-}
-
-
-function generateThumbnailText(){
-
-  const topic =
-    document.getElementById("thumbnailTopic").value.trim();
-
-  const emotion =
-    document.getElementById("thumbnailEmotion").value;
-
-  if(!topic){
-    creatorResult(
-      "thumbnailResult",
-      "Please enter a video topic."
-    );
-    return;
-  }
-
-  const texts = [
-
-    "THE TRUTH!",
-
-    "DON'T DO THIS!",
-
-    "YOU NEED TO KNOW!",
-
-    "THIS CHANGES EVERYTHING!",
-
-    "I WAS WRONG!",
-
-    "WATCH THIS FIRST!",
-
-    "THE SECRET!",
-
-    "STOP MAKING THIS MISTAKE!"
-  ];
-
-  creatorResult(
-    "thumbnailResult",
-    "EMOTION: " + emotion + "\n\n" +
-    texts.map((x,i) =>
-      (i+1) + ". " + x + " — " + topic
-    ).join("\n\n")
-  );
-}
-
-
-function generateSEOKeywords(){
-
-  const topic =
-    document.getElementById("seoTopic").value.trim();
-
-  const audience =
-    document.getElementById("seoAudience").value.trim() ||
-    "beginners";
-
-  if(!topic){
-    creatorResult(
-      "seoResult",
-      "Please enter your main topic."
-    );
-    return;
-  }
-
-  const keywords = [
-
-    topic,
-
-    topic + " for " + audience,
-
-    "how to " + topic,
-
-    topic + " tips",
-
-    topic + " tutorial",
-
-    topic + " guide",
-
-    "best " + topic,
-
-    topic + " explained",
-
-    topic + " for beginners",
-
-    topic + " mistakes",
-
-    topic + " strategy",
-
-    topic + " ideas"
-  ];
-
-  creatorResult(
-    "seoResult",
-    keywords.map((x,i) =>
-      (i+1) + ". " + x
-    ).join("\n")
-  );
-}
-
-
-function generateCalendar(){
-
-  const topic =
-    document.getElementById("calendarTopic").value.trim();
-
-  const days =
-    parseInt(document.getElementById("calendarDays").value);
-
-  const platform =
-    document.getElementById("calendarPlatform").value;
-
-  if(!topic){
-    creatorResult(
-      "calendarResult",
-      "Please enter your niche."
-    );
-    return;
-  }
-
-  const contentTypes = [
-
-    "Educational Tip",
-    "How-To Tutorial",
-    "Common Mistakes",
-    "Top 5 List",
-    "Story / Experience",
-    "Myth vs Reality",
-    "Behind The Scenes"
-  ];
-
-  let output =
-    "📅 " + days +
-    "-DAY CONTENT CALENDAR\n\n" +
-    "NICHE: " + topic + "\n" +
-    "PLATFORM: " + platform + "\n\n";
-
-  for(let i=1;i<=days;i++){
-
-    output +=
-      "DAY " + i +
-      " — " +
-      contentTypes[(i-1) % contentTypes.length] +
-      "\n" +
-      topic +
-      "\n\n";
-  }
-
-  creatorResult("calendarResult",output);
-}
-
-
-function generateCaption(){
-
-  const topic =
-    document.getElementById("captionTopic").value.trim();
-
-  const platform =
-    document.getElementById("captionPlatform").value;
-
-  if(!topic){
-    creatorResult(
-      "captionResult",
-      "Please enter what your post is about."
-    );
-    return;
-  }
-
-  const caption =
-
-`🔥 ${topic}
-
-Here's something you should know about ${topic}.
-
-Save this post so you can come back to it later.
-
-💬 What do you think?
-
-Follow for more useful content.
-
-#${topic.replace(/[^a-zA-Z0-9]/g,"")} #ContentCreator #Tips`;
-
-  creatorResult(
-    "captionResult",
-    "PLATFORM: " + platform + "\n\n" +
-    caption
-  );
-}
-
-</script>
-  <!-- AI DIRECTORY -->
-<section id="ai" class="ai-section">
-<div class="container">
-
-  <div class="section-title">
-    <h2>🤖 AI Tools Directory</h2>
-    <p>
-      Discover popular AI tools for writing, images, video, coding,
-      education, marketing, business and more.
-    </p>
-  </div>
-
-  <div class="ai-controls">
-
-    <input
-      id="aiSearch"
-      class="ai-search"
-      placeholder="Search AI tools..."
-      oninput="filterAITools()"
-
-    <div class="filters">
-
-      <button class="filter-btn active"
-        onclick="filterCategory('All',this)">
-        All
+      <button class="tool-category active"
+              onclick="showToolCategory('all', this)">
+        All Tools
       </button>
 
-      <button class="filter-btn"
-        onclick="filterCategory('Writing',this)">
+      <button class="tool-category"
+              onclick="showToolCategory('calculator', this)">
+        🧮 Calculators
+      </button>
+
+      <button class="tool-category"
+              onclick="showToolCategory('writing', this)">
         ✍️ Writing
       </button>
 
-      <button class="filter-btn"
-        onclick="filterCategory('Image',this)">
-        🎨 Image
-      </button>
-
-      <button class="filter-btn"
-        onclick="filterCategory('Video',this)">
-        🎬 Video
-      </button>
-
-      <button class="filter-btn"
-        onclick="filterCategory('Coding',this)">
-        💻 Coding
-      </button>
-
-      <button class="filter-btn"
-        onclick="filterCategory('Education',this)">
-        📚 Education
-      </button>
-
-      <button class="filter-btn"
-        onclick="filterCategory('Marketing',this)">
-        📈 Marketing
-      </button>
-
-      <button class="filter-btn"
-        onclick="filterCategory('Business',this)">
+      <button class="tool-category"
+              onclick="showToolCategory('business', this)">
         💼 Business
       </button>
 
-      <button class="filter-btn"
-        onclick="filterCategory('Audio',this)">
-        🎵 Audio
-      </button>
-
     </div>
-  </div>
 
-  <div id="aiGrid" class="tools-grid">
 
-    <div class="card ai-card featured"
-      data-category="Writing Business Education"
-      data-name="ChatGPT">
+    <!-- TOOLS GRID -->
 
-      <span class="featured-label">Featured</span>
+    <div class="tool-grid">
 
-      <div class="ai-icon">🤖</div>
 
-      <span class="badge freemium">Freemium</span>
+      <!-- PERCENTAGE -->
 
-      <div class="category">
-        Writing • Business • Education
+      <div class="tool-card"
+           data-tool-category="calculator"
+           data-tool-name="Percentage Calculator">
+
+        <div class="tool-card-top">
+
+          <div class="tool-icon purple">
+            %
+          </div>
+
+          <span class="tool-label">
+            Calculator
+          </span>
+
+        </div>
+
+        <h3>
+          Percentage Calculator
+        </h3>
+
+        <p>
+          Quickly calculate percentages, increases and decreases.
+        </p>
+
+        <div class="tool-inputs">
+
+          <input
+            id="percentageValue"
+            type="number"
+            placeholder="Enter number"
+          >
+
+          <input
+            id="percentagePercent"
+            type="number"
+            placeholder="Enter percentage"
+          >
+
+        </div>
+
+        <button class="tool-btn"
+                onclick="calculatePercentage()">
+          Calculate
+        </button>
+
+        <div class="tool-result"
+             id="percentageResult">
+          Your answer will appear here.
+        </div>
+
       </div>
 
-      <h3>ChatGPT</h3>
-
-      <p>
-        AI assistant for writing, brainstorming, learning,
-        coding and many other tasks.
-      </p>
-
-      <a class="ai-link"
-        href="https://chatgpt.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
 
 
-    <div class="card ai-card"
-      data-category="Writing Coding Business"
-      data-name="Claude">
+      <!-- AGE CALCULATOR -->
 
-      <div class="ai-icon">🧠</div>
+      <div class="tool-card"
+           data-tool-category="calculator"
+           data-tool-name="Age Calculator">
 
-      <span class="badge freemium">Freemium</span>
+        <div class="tool-card-top">
 
-      <div class="category">
-        Writing • Coding • Business
+          <div class="tool-icon blue">
+            🎂
+          </div>
+
+          <span class="tool-label">
+            Calculator
+          </span>
+
+        </div>
+
+        <h3>
+          Age Calculator
+        </h3>
+
+        <p>
+          Find your exact age from your date of birth.
+        </p>
+
+        <input
+          id="birthDate"
+          type="date"
+        >
+
+        <button class="tool-btn"
+                onclick="calculateAge()">
+          Calculate Age
+        </button>
+
+        <div class="tool-result"
+             id="ageResult">
+          Your age will appear here.
+        </div>
+
       </div>
 
-      <h3>Claude</h3>
-
-      <p>
-        AI assistant for writing, analysis, coding and
-        working with information.
-      </p>
-
-      <a class="ai-link"
-        href="https://claude.ai/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
 
 
-    <div class="card ai-card"
-      data-category="Writing Education Business"
-      data-name="Google Gemini">
+      <!-- DISCOUNT -->
 
-      <div class="ai-icon">✨</div>
+      <div class="tool-card"
+           data-tool-category="calculator"
+           data-tool-name="Discount Calculator">
 
-      <span class="badge freemium">Freemium</span>
+        <div class="tool-card-top">
 
-      <div class="category">
-        Writing • Education • Business
+          <div class="tool-icon green">
+            🏷️
+          </div>
+
+          <span class="tool-label">
+            Calculator
+          </span>
+
+        </div>
+
+        <h3>
+          Discount Calculator
+        </h3>
+
+        <p>
+          Calculate sale prices and how much you save.
+        </p>
+
+        <input
+          id="discountPrice"
+          type="number"
+          placeholder="Original price"
+        >
+
+        <input
+          id="discountPercent"
+          type="number"
+          placeholder="Discount %"
+        >
+
+        <button class="tool-btn"
+                onclick="calculateDiscount()">
+          Calculate Discount
+        </button>
+
+        <div class="tool-result"
+             id="discountResult">
+          Your result will appear here.
+        </div>
+
       </div>
 
-      <h3>Google Gemini</h3>
-
-      <p>
-        Google's AI assistant for research, writing,
-        brainstorming and productivity.
-      </p>
-
-      <a class="ai-link"
-        href="https://gemini.google.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
 
 
-    <div class="card ai-card"
-      data-category="Image Marketing Business"
-      data-name="Canva AI">
+      <!-- WORD COUNTER -->
 
-      <div class="ai-icon">🎨</div>
+      <div class="tool-card"
+           data-tool-category="writing"
+           data-tool-name="Word Character Counter">
 
-      <span class="badge freemium">Freemium</span>
+        <div class="tool-card-top">
 
-      <div class="category">
-        Image • Marketing • Business
+          <div class="tool-icon orange">
+            Aa
+          </div>
+
+          <span class="tool-label">
+            Writing
+          </span>
+
+        </div>
+
+        <h3>
+          Word & Character Counter
+        </h3>
+
+        <p>
+          Count words, characters and sentences instantly.
+        </p>
+
+        <textarea
+          id="counterText"
+          rows="5"
+          placeholder="Start typing or paste your text..."
+          oninput="countText()"
+        ></textarea>
+
+        <div class="counter-stats">
+
+          <div>
+            <strong id="wordCount">0</strong>
+            <span>Words</span>
+          </div>
+
+          <div>
+            <strong id="characterCount">0</strong>
+            <span>Characters</span>
+          </div>
+
+          <div>
+            <strong id="sentenceCount">0</strong>
+            <span>Sentences</span>
+          </div>
+
+        </div>
+
       </div>
 
-      <h3>Canva AI</h3>
-
-      <p>
-        AI-powered design features for creating graphics,
-        presentations and social content.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.canva.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
 
 
-    <div class="card ai-card"
-      data-category="Image"
-      data-name="Adobe Firefly">
+      <!-- BMI -->
 
-      <div class="ai-icon">🖼️</div>
+      <div class="tool-card"
+           data-tool-category="calculator"
+           data-tool-name="BMI Calculator">
 
-      <span class="badge freemium">Freemium</span>
+        <div class="tool-card-top">
 
-      <div class="category">
-        Image
+          <div class="tool-icon pink">
+            ⚖️
+          </div>
+
+          <span class="tool-label">
+            Calculator
+          </span>
+
+        </div>
+
+        <h3>
+          BMI Calculator
+        </h3>
+
+        <p>
+          Calculate your Body Mass Index using height and weight.
+        </p>
+
+        <input
+          id="bmiWeight"
+          type="number"
+          placeholder="Weight in kg"
+        >
+
+        <input
+          id="bmiHeight"
+          type="number"
+          placeholder="Height in cm"
+        >
+
+        <button class="tool-btn"
+                onclick="calculateBMI()">
+          Calculate BMI
+        </button>
+
+        <div class="tool-result"
+             id="bmiResult">
+          Your BMI will appear here.
+        </div>
+
       </div>
 
-      <h3>Adobe Firefly</h3>
-
-      <p>
-        AI creative tools for generating and editing
-        images and other creative content.
-      </p>
-
-      <a class="ai-link"
-        href="https://firefly.adobe.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
 
 
-    <div class="card ai-card"
-      data-category="Video"
-      data-name="Runway">
+      <!-- TIP CALCULATOR -->
 
-      <div class="ai-icon">🎬</div>
+      <div class="tool-card"
+           data-tool-category="calculator"
+           data-tool-name="Tip Calculator">
 
-      <span class="badge freemium">Freemium</span>
+        <div class="tool-card-top">
 
-      <div class="category">
-        Video
+          <div class="tool-icon teal">
+            💳
+          </div>
+
+          <span class="tool-label">
+            Calculator
+          </span>
+
+        </div>
+
+        <h3>
+          Tip Calculator
+        </h3>
+
+        <p>
+          Quickly calculate tips and split bills between people.
+        </p>
+
+        <input
+          id="tipBill"
+          type="number"
+          placeholder="Bill amount"
+        >
+
+        <input
+          id="tipPercent"
+          type="number"
+          placeholder="Tip percentage"
+        >
+
+        <input
+          id="tipPeople"
+          type="number"
+          placeholder="Number of people"
+          value="1"
+        >
+
+        <button class="tool-btn"
+                onclick="calculateTip()">
+          Calculate Tip
+        </button>
+
+        <div class="tool-result"
+             id="tipResult">
+          Your result will appear here.
+        </div>
+
       </div>
 
-      <h3>Runway</h3>
-
-      <p>
-        AI creative platform for generating and editing
-        video content.
-      </p>
-
-      <a class="ai-link"
-        href="https://runwayml.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
 
     </div>
-
-
-    <div class="card ai-card"
-      data-category="Coding"
-      data-name="GitHub Copilot">
-
-      <div class="ai-icon">💻</div>
-
-      <span class="badge paid">Paid</span>
-
-      <div class="category">
-        Coding
-      </div>
-
-      <h3>GitHub Copilot</h3>
-
-      <p>
-        AI coding assistance for developers working
-        inside supported development environments.
-      </p>
-
-      <a class="ai-link"
-        href="https://github.com/features/copilot"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Education Writing Business"
-      data-name="Perplexity">
-
-      <div class="ai-icon">🔎</div>
-
-      <span class="badge freemium">Freemium</span>
-
-      <div class="category">
-        Education • Writing • Business
-      </div>
-
-      <h3>Perplexity</h3>
-
-      <p>
-        AI-powered search and research assistant for
-        finding and understanding information.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.perplexity.ai/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Writing Education Business"
-      data-name="Grammarly">
-
-      <div class="ai-icon">✍️</div>
-
-      <span class="badge freemium">Freemium</span>
-
-      <div class="category">
-        Writing • Education • Business
-      </div>
-
-      <h3>Grammarly</h3>
-
-      <p>
-        Writing assistant that helps improve grammar,
-        clarity and communication.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.grammarly.com/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Audio"
-      data-name="ElevenLabs">
-
-      <div class="ai-icon">🎙️</div>
-
-      <span class="badge freemium">Freemium</span>
-
-      <div class="category">
-        Audio
-      </div>
-
-      <h3>ElevenLabs</h3>
-
-      <p>
-        AI voice and audio technology for creating
-        natural-sounding speech.
-      </p>
-
-      <a class="ai-link"
-        href="https://elevenlabs.io/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Marketing Writing"
-      data-name="Copy.ai">
-
-      <div class="ai-icon">📈</div>
-
-      <span class="badge freemium">Freemium</span>
-
-      <div class="category">
-        Marketing • Writing
-      </div>
-
-      <h3>Copy.ai</h3>
-
-      <p>
-        AI-powered tools designed to help with marketing
-        and business content.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.copy.ai/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Video Business"
-      data-name="Synthesia">
-
-      <div class="ai-icon">👤</div>
-
-      <span class="badge paid">Paid</span>
-
-      <div class="category">
-        Video • Business
-      </div>
-
-      <h3>Synthesia</h3>
-
-      <p>
-        AI video platform focused on creating videos
-        with AI avatars and voiceovers.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.synthesia.io/"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-
-    <div class="card ai-card"
-      data-category="Business Writing"
-      data-name="Notion AI">
-
-      <div class="ai-icon">📓</div>
-
-      <span class="badge freemium">Freemium</span>
-
-      <div class="category">
-        Business • Writing
-      </div>
-
-      <h3>Notion AI</h3>
-
-      <p>
-        AI features integrated into Notion for writing,
-        organization and productivity.
-      </p>
-
-      <a class="ai-link"
-        href="https://www.notion.com/product/ai"
-        target="_blank"
-        rel="noopener">
-        Visit Tool →
-      </a>
-
-    </div>
-
-  </div>
-
-  <div id="noResults"
-    style="display:none;text-align:center;margin-top:30px">
-
-    <h3>No AI tools found.</h3>
-    <p>Try another search or category.</p>
-
-  </div>
-
-</div>
-</section>
-
-
-<section class="container">
-
-  <div class="cta">
-
-    <h2>🚀 Have an AI Tool?</h2>
-
-    <p>
-      ToolNest will soon allow AI companies and creators
-      to submit their tools to our directory.
-    </p>
-
-    <button class="btn"
-      onclick="showComingSoon()">
-      Submit a Tool
-    </button>
 
   </div>
 
 </section>
 
 
-<footer>
 
-  <p>
-    <strong>ToolNest</strong> — Free tools for everyone.
-  </p>
+<!-- =========================================
+     TOOL SECTION CSS
+========================================= -->
 
-  <p>
-    © 2026 ToolNest. Built for the world 🌍
-  </p>
+<style>
 
-</footer>
+.tool-categories{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-bottom:35px;
+
+}
+
+.tool-category{
+
+  border:1px solid #e5e7eb;
+
+  background:white;
+
+  color:#4b5563;
+
+  padding:10px 17px;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  transition:.2s;
+
+}
+
+.tool-category:hover{
+
+  border-color:#635bff;
+
+  color:#635bff;
+
+}
+
+.tool-category.active{
+
+  background:#635bff;
+
+  color:white;
+
+  border-color:#635bff;
+
+}
+
+
+.tool-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:22px;
+
+}
+
+
+.tool-card{
+
+  background:white;
+
+  border:1px solid #e5e7eb;
+
+  border-radius:20px;
+
+  padding:24px;
+
+  box-shadow:var(--shadow);
+
+  transition:
+  transform .2s ease,
+  box-shadow .2s ease;
+
+}
+
+.tool-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 18px 45px rgba(15,23,42,.12);
+
+}
+
+
+.tool-card-top{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-bottom:18px;
+
+}
+
+
+.tool-icon{
+
+  width:46px;
+
+  height:46px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:13px;
+
+  font-weight:900;
+
+  font-size:20px;
+
+}
+
+
+.tool-icon.purple{
+  background:#eeecff;
+  color:#635bff;
+}
+
+.tool-icon.blue{
+  background:#e8f2ff;
+  color:#2563eb;
+}
+
+.tool-icon.green{
+  background:#e8faf3;
+  color:#059669;
+}
+
+.tool-icon.orange{
+  background:#fff1e6;
+  color:#ea580c;
+}
+
+.tool-icon.pink{
+  background:#fcebf4;
+  color:#db2777;
+}
+
+.tool-icon.teal{
+  background:#e7fafa;
+  color:#0f766e;
+}
+
+
+.tool-label{
+
+  font-size:11px;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:.6px;
+
+  color:#9ca3af;
+
+}
+
+
+.tool-card h3{
+
+  font-size:19px;
+
+  line-height:1.3;
+
+  color:#111827;
+
+  margin-bottom:8px;
+
+}
+
+
+.tool-card p{
+
+  color:#6b7280;
+
+  font-size:14px;
+
+  line-height:1.6;
+
+  margin-bottom:17px;
+
+}
+
+
+.tool-card input,
+.tool-card textarea{
+
+  width:100%;
+
+  border:1px solid #e1e5ec;
+
+  border-radius:11px;
+
+  padding:12px 13px;
+
+  margin-bottom:10px;
+
+  outline:none;
+
+  background:#fff;
+
+  color:#111827;
+
+  resize:vertical;
+
+}
+
+
+.tool-card input:focus,
+.tool-card textarea:focus{
+
+  border-color:#635bff;
+
+  box-shadow:
+  0 0 0 3px rgba(99,91,255,.09);
+
+}
+
+
+.tool-btn{
+
+  width:100%;
+
+  border:none;
+
+  border-radius:11px;
+
+  padding:12px 16px;
+
+  background:#111827;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-weight:750;
+
+  transition:.2s;
+
+}
+
+
+.tool-btn:hover{
+
+  background:#635bff;
+
+  transform:translateY(-1px);
+
+}
+
+
+.tool-result{
+
+  margin-top:12px;
+
+  padding:12px;
+
+  border-radius:11px;
+
+  background:#f8fafc;
+
+  border:1px solid #edf0f4;
+
+  color:#4b5563;
+
+  font-size:13px;
+
+  line-height:1.5;
+
+}
+
+
+.counter-stats{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:8px;
+
+  margin-top:10px;
+
+}
+
+
+.counter-stats div{
+
+  padding:10px 5px;
+
+  text-align:center;
+
+  background:#f8fafc;
+
+  border-radius:10px;
+
+}
+
+
+.counter-stats strong{
+
+  display:block;
+
+  font-size:20px;
+
+  color:#111827;
+
+}
+
+
+.counter-stats span{
+
+  font-size:10px;
+
+  color:#9ca3af;
+
+  font-weight:700;
+
+}
+
+
+@media(max-width:600px){
+
+  .tool-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .tool-card{
+
+    padding:20px;
+
+  }
+
+  .tool-categories{
+
+    justify-content:flex-start;
+
+    overflow-x:auto;
+
+    flex-wrap:nowrap;
+
+    padding-bottom:5px;
+
+  }
+
+  .tool-category{
+
+    flex-shrink:0;
+
+  }
+
+}
+
+</style>
+
 
 
 <script>
-  function globalSearch(){
 
-  const query =
-    document.getElementById("globalSearch")
-    .value.toLowerCase()
-    .trim();
+// ===============================
+// TOOL CATEGORY FILTER
+// ===============================
 
-  const elements =
-    document.querySelectorAll(".searchable, .ai-card");
+function showToolCategory(category, button) {
+  const cards = document.querySelectorAll(".tool-card");
+  const buttons = document.querySelectorAll(".tool-category");
 
-  elements.forEach(el => {
+  buttons.forEach(btn => btn.classList.remove("active"));
 
-    const text =
-      el.innerText.toLowerCase();
+  if (button) {
+    button.classList.add("active");
+  }
 
-    el.style.display =
-      text.includes(query) ? "" : "none";
+  cards.forEach(card => {
+    const cardCategory = card.dataset.category;
 
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
   });
-
-  if(query){
-    document.getElementById("tools")
-      .scrollIntoView({behavior:"smooth"});
-  }
 }
 
 
-function calculatePercentage(){
+// ===============================
+// PERCENTAGE CALCULATOR
+// ===============================
 
-  const percentage =
-    parseFloat(document.getElementById("percent").value);
+function calculatePercentage() {
+  const value = parseFloat(
+    document.getElementById("percentageValue").value
+  );
 
-  const number =
-    parseFloat(document.getElementById("percentNumber").value);
+  const percent = parseFloat(
+    document.getElementById("percentagePercent").value
+  );
 
-  if(isNaN(percentage) || isNaN(number)){
-    document.getElementById("percentageResult").innerText =
-      "Please enter both numbers.";
+  const result = document.getElementById("percentageResult");
+
+  if (isNaN(value) || isNaN(percent)) {
+    result.textContent = "Please enter both numbers.";
     return;
   }
 
-  const answer =
-    (percentage / 100) * number;
+  const answer = (value * percent) / 100;
 
-  document.getElementById("percentageResult").innerText =
-    percentage + "% of " + number + " = " +
-    answer.toFixed(2);
+  result.textContent =
+    percent + "% of " + value + " = " + answer.toFixed(2);
 }
 
 
-function calculateAge(){
+// ===============================
+// AGE CALCULATOR
+// ===============================
 
-  const input =
-    document.getElementById("birthDate").value;
+function calculateAge() {
+  const birthDate = document.getElementById("birthDate").value;
+  const result = document.getElementById("ageResult");
 
-  if(!input){
-    document.getElementById("ageResult").innerText =
-      "Please select your birth date.";
+  if (!birthDate) {
+    result.textContent = "Please select your birth date.";
     return;
   }
 
-  const birth = new Date(input);
+  const birth = new Date(birthDate);
   const today = new Date();
 
-  let age =
-    today.getFullYear() -
-    birth.getFullYear();
+  let age = today.getFullYear() - birth.getFullYear();
 
-  const month =
-    today.getMonth() -
-    birth.getMonth();
+  const monthDifference =
+    today.getMonth() - birth.getMonth();
 
-  if(
-    month < 0 ||
-    (month === 0 &&
-    today.getDate() < birth.getDate())
-  ){
+  if (
+    monthDifference < 0 ||
+    (
+      monthDifference === 0 &&
+      today.getDate() < birth.getDate()
+    )
+  ) {
     age--;
   }
 
-  document.getElementById("ageResult").innerText =
-    "You are " + age + " years old.";
-}
-
-
-function calculateDiscount(){
-
-  const price =
-    parseFloat(document.getElementById("originalPrice").value);
-
-  const discount =
-    parseFloat(document.getElementById("discountPercent").value);
-
-  if(isNaN(price) || isNaN(discount)){
-    document.getElementById("discountResult").innerText =
-      "Please enter both values.";
+  if (age < 0) {
+    result.textContent = "Please enter a valid birth date.";
     return;
   }
 
-  const savings =
-    price * discount / 100;
-
-  const finalPrice =
-    price - savings;
-
-  document.getElementById("discountResult").innerText =
-    "You save " + savings.toFixed(2) +
-    ". Final price: " + finalPrice.toFixed(2);
+  result.textContent = "You are " + age + " years old.";
 }
 
 
-function countWords(){
+// ===============================
+// DISCOUNT CALCULATOR
+// ===============================
 
+function calculateDiscount() {
+  const price = parseFloat(
+    document.getElementById("discountPrice").value
+  );
+
+  const discount = parseFloat(
+    document.getElementById("discountPercent").value
+  );
+
+  const result = document.getElementById("discountResult");
+
+  if (isNaN(price) || isNaN(discount)) {
+    result.textContent = "Please enter both numbers.";
+    return;
+  }
+
+  const savings = (price * discount) / 100;
+  const finalPrice = price - savings;
+
+  result.textContent =
+    "You save " +
+    savings.toFixed(2) +
+    " • Final price: " +
+    finalPrice.toFixed(2);
+}
+
+
+// ===============================
+// WORD & CHARACTER COUNTER
+// ===============================
+
+function countText() {
   const text =
     document.getElementById("counterText").value;
 
   const words =
-    text.trim() === "" ?
-    0 :
-    text.trim().split(/\s+/).length;
+    text.trim() === ""
+      ? 0
+      : text.trim().split(/\s+/).length;
 
-  const characters =
-    text.length;
+  const characters = text.length;
 
-  document.getElementById("counterResult").innerText =
-    "Words: " + words +
-    " | Characters: " + characters;
+  const sentences =
+    text.trim() === ""
+      ? 0
+      : text.split(/[.!?]+/).filter(s => s.trim()).length;
+
+  document.getElementById("wordCount").textContent =
+    words;
+
+  document.getElementById("characterCount").textContent =
+    characters;
+
+  document.getElementById("sentenceCount").textContent =
+    sentences;
 }
 
 
-function calculateProfit(){
+// ===============================
+// BMI CALCULATOR
+// ===============================
 
-  const cost =
-    parseFloat(document.getElementById("costPrice").value);
+function calculateBMI() {
+  const weight = parseFloat(
+    document.getElementById("bmiWeight").value
+  );
 
-  const selling =
-    parseFloat(document.getElementById("sellingPrice").value);
+  const height = parseFloat(
+    document.getElementById("bmiHeight").value
+  );
 
-  if(isNaN(cost) || isNaN(selling)){
-    document.getElementById("profitResult").innerText =
-      "Please enter both prices.";
+  const result = document.getElementById("bmiResult");
+
+  if (isNaN(weight) || isNaN(height) || height <= 0) {
+    result.textContent = "Please enter valid values.";
     return;
   }
 
-  const profit =
-    selling - cost;
+  const heightMeters = height / 100;
 
-  const margin =
-    selling === 0 ? 0 : (profit / selling) * 100;
+  const bmi =
+    weight / (heightMeters * heightMeters);
 
-  document.getElementById("profitResult").innerText =
-    "Profit: " + profit.toFixed(2) +
-    " | Margin: " + margin.toFixed(2) + "%";
+  let category = "";
+
+  if (bmi < 18.5) {
+    category = "Underweight";
+  } else if (bmi < 25) {
+    category = "Healthy range";
+  } else if (bmi < 30) {
+    category = "Overweight";
+  } else {
+    category = "Obesity range";
+  }
+
+  result.textContent =
+    "BMI: " + bmi.toFixed(1) + " • " + category;
 }
 
 
-function generateBusinessNames(){
+// ===============================
+// TIP CALCULATOR
+// ===============================
 
-  const keyword =
-    document.getElementById("businessKeyword")
-    .value.trim();
+function calculateTip() {
+  const bill = parseFloat(
+    document.getElementById("tipBill").value
+  );
 
-  if(!keyword){
-    document.getElementById("businessNameResult").innerText =
-      "Enter a keyword first.";
+  const tipPercent = parseFloat(
+    document.getElementById("tipPercent").value
+  );
+
+  const people = parseInt(
+    document.getElementById("tipPeople").value
+  );
+
+  const result = document.getElementById("tipResult");
+
+  if (
+    isNaN(bill) ||
+    isNaN(tipPercent) ||
+    isNaN(people) ||
+    people <= 0
+  ) {
+    result.textContent = "Please enter valid values.";
     return;
   }
 
-  const names = [
-    keyword + "Hub",
-    keyword + "Pro",
-    "Go" + keyword,
-    keyword + "Labs",
-    keyword + "Zone",
-    keyword + "Works",
-    "Next" + keyword,
-    keyword + "360"
-  ];
+  const tip = (bill * tipPercent) / 100;
+  const total = bill + tip;
+  const perPerson = total / people;
 
-  document.getElementById("businessNameResult").innerText =
-    names.join(" • ");
+  result.textContent =
+    "Tip: " +
+    tip.toFixed(2) +
+    " • Total: " +
+    total.toFixed(2) +
+    " • Each: " +
+    perPerson.toFixed(2);
 }
 
 
-function generateTitles(){
+// ===============================
+// GLOBAL SEARCH
+// ===============================
 
-  const topic =
-    document.getElementById("titleTopic").value.trim();
+const globalSearch =
+  document.getElementById("globalSearch");
 
-  if(!topic){
-    document.getElementById("titleResult").innerText =
-      "Enter a topic first.";
-    return;
-  }
+if (globalSearch) {
 
-  const titles = [
-    "The Ultimate Guide to " + topic,
-    "7 Things You Need to Know About " + topic,
-    "I Tried " + topic + " — Here's What Happened",
-    "How to Start " + topic + " in 2026",
-    "The Truth About " + topic,
-    "Beginner's Guide to " + topic
-  ];
+  globalSearch.addEventListener("input", function () {
 
-  document.getElementById("titleResult").innerText =
-    titles.join("\n\n");
-}
+    const search =
+      this.value.toLowerCase().trim();
 
+    const cards =
+      document.querySelectorAll(".tool-card");
 
-function generateVideoIdeas(){
+    cards.forEach(card => {
 
-  const topic =
-    document.getElementById("videoTopic").value.trim();
+      const name =
+        (
+          card.dataset.toolName ||
+          card.textContent
+        ).toLowerCase();
 
-  if(!topic){
-    document.getElementById("videoIdeasResult").innerText =
-      "Enter a topic first.";
-    return;
-  }
+      if (name.includes(search)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
 
-  const ideas = [
-    "Beginner's guide to " + topic,
-    "10 mistakes people make with " + topic,
-    "Top 5 tips for " + topic,
-    "Things I wish I knew about " + topic,
-    "How to improve at " + topic,
-    "Complete " + topic + " challenge"
-  ];
-
-  document.getElementById("videoIdeasResult").innerText =
-    ideas.join("\n\n");
-}
-
-
-function generateScript(){
-
-  const topic =
-    document.getElementById("scriptTopic").value.trim();
-
-  if(!topic){
-    document.getElementById("scriptResult").innerText =
-      "Enter a topic first.";
-    return;
-  }
-
-  document.getElementById("scriptResult").innerText =
-`HOOK:
-Did you know there are simple ways to improve your results with ${topic}?
-
-INTRO:
-Welcome back! Today we're talking about ${topic}.
-
-MAIN POINT 1:
-Start by understanding the basics of ${topic}.
-
-MAIN POINT 2:
-Use simple strategies and stay consistent.
-
-MAIN POINT 3:
-Avoid common mistakes and keep improving.
-
-ENDING:
-If you found this useful, follow for more content about ${topic}.`;
-}
-
-
-function generateDescription(){
-
-  const topic =
-    document.getElementById("descriptionTopic").value.trim();
-
-  if(!topic){
-    document.getElementById("descriptionResult").innerText =
-      "Enter a topic first.";
-    return;
-  }
-
-  document.getElementById("descriptionResult").innerText =
-`In today's video, we explore ${topic} and share useful tips,
-ideas and strategies you can start using today.
-
-If you enjoyed this video, like, subscribe and share it.
-
-#${topic.replace(/\s+/g,"")} #Tips #Guide`;
-}
-
-
-function generateCaption(){
-
-  const topic =
-    document.getElementById("captionTopic").value.trim();
-
-  if(!topic){
-    document.getElementById("captionResult").innerText =
-      "Enter a topic first.";
-    return;
-  }
-
-  document.getElementById("captionResult").innerText =
-    "🚀 Exploring " + topic +
-    " and learning something new every day! " +
-    "What do you think? 👇 #Content #Growth #Tips";
-}
-
-
-function generateInvoice(){
-
-  const business =
-    document.getElementById("businessName").value ||
-    "Your Business";
-
-  const customer =
-    document.getElementById("customerName").value ||
-    "Customer";
-
-  const number =
-    document.getElementById("invoiceNumber").value ||
-    "INV-001";
-
-  const date =
-    document.getElementById("invoiceDate").value ||
-    new Date().toLocaleDateString();
-
-  const email =
-    document.getElementById("businessEmail").value ||
-    "";
-
-  const taxRate =
-    parseFloat(document.getElementById("taxRate").value) || 0;
-
-  let subtotal = 0;
-  let rows = "";
-
-  for(let i=1;i<=3;i++){
-
-    const item =
-      document.getElementById("item"+i).value;
-
-    const qty =
-      parseFloat(document.getElementById("qty"+i).value) || 0;
-
-    const price =
-      parseFloat(document.getElementById("price"+i).value) || 0;
-
-    const total =
-      qty * price;
-
-    if(item || price){
-
-      subtotal += total;
-
-      rows += `
-        <tr>
-          <td>${item || "Item"}</td>
-          <td>${qty}</td>
-          <td>${price.toFixed(2)}</td>
-          <td>${total.toFixed(2)}</td>
-        </tr>
-      `;
-    }
-  }
-
-  const tax =
-    subtotal * taxRate / 100;
-
-  const total =
-    subtotal + tax;
-
-  const preview =
-    document.getElementById("invoicePreview");
-
-  preview.style.display = "block";
-
-  preview.innerHTML = `
-    <h2>${business}</h2>
-    <p>${email}</p>
-
-    <hr>
-
-    <p><strong>Invoice:</strong> ${number}</p>
-    <p><strong>Date:</strong> ${date}</p>
-    <p><strong>Bill To:</strong> ${customer}</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Qty</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        ${rows}
-      </tbody>
-    </table>
-
-    <br>
-
-    <p><strong>Subtotal:</strong> ${subtotal.toFixed(2)}</p>
-    <p><strong>Tax (${taxRate}%):</strong> ${tax.toFixed(2)}</p>
-    <h2>Total: ${total.toFixed(2)}</h2>
-
-    <br>
-    <p>Thank you for your business!</p>
-  `;
-}
-
-
-let selectedCategory = "All";
-
-
-function filterCategory(category, button){
-
-  selectedCategory = category;
-
-  document.querySelectorAll(".filter-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
-
-  button.classList.add("active");
-
-  filterAITools();
-}
-
-
-function filterAITools(){
-
-  const query =
-    document.getElementById("aiSearch")
-    .value.toLowerCase()
-    .trim();
-
-  const cards =
-    document.querySelectorAll(".ai-card");
-
-  let visible = 0;
-
-  cards.forEach(card => {
-
-    const text =
-      (
-        card.innerText +
-        " " +
-        card.dataset.category +
-        " " +
-        card.dataset.name
-      ).toLowerCase();
-
-    const categoryMatch =
-      selectedCategory === "All" ||
-      card.dataset.category.includes(selectedCategory);
-
-    const searchMatch =
-      text.includes(query);
-
-    if(categoryMatch && searchMatch){
-
-      card.style.display = "";
-      visible++;
-
-    }else{
-
-      card.style.display = "none";
-
-    }
+    });
 
   });
 
-  document.getElementById("noResults").style.display =
-    visible === 0 ? "block" : "none";
 }
-
-
-function showComingSoon(){
-
-  alert(
-    "Tool submission is coming soon! 🚀\n\n" +
-    "Soon businesses and AI creators will be able " +
-    "to submit their tools to ToolNest."
-  );
-}
-
-
-/* Start AI directory normally */
-filterAITools();
 
 </script>
-
-</body>
-</html>
